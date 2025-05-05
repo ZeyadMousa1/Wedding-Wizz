@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import hall1 from "./../../assets/Images/Halls/All Halls/All_Halls_1.jpg";
-import * as Yup from "yup";
+import TopRated from "../Halls/topRated";
+import Newest from "../Halls/Newest";
+import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 function HallDetails() {
-  // State to hold form values
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +14,6 @@ function HallDetails() {
     comments: "",
   });
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -21,9 +22,8 @@ function HallDetails() {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
     console.log("Form Data:", formData);
   };
 
@@ -31,8 +31,11 @@ function HallDetails() {
     <>
       <div className="container">
         <div className="row d-flex justify-content-between">
-          <div className="col-md-4 bg-light mt-5 p-0">
-            <div>
+          <div className="col-md-4 mt-5 p-0">
+            <Link className="btn btn-primary mb-4" to={"../halls"}>
+              <i className="fa-solid fa-arrow-left"></i> Back
+            </Link>
+            <div className="bg-light">
               <div>
                 <h3 className="bg-secondary text-light text-center">
                   Make a reservation
@@ -141,6 +144,9 @@ function HallDetails() {
           </div>
         </div>
       </div>
+      <TopRated />
+      <Newest />
+      <Footer />
     </>
   );
 }

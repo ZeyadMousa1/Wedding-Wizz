@@ -1,12 +1,151 @@
-import React from "react";
+import React, { useState } from "react";
 import allHalls1 from "./../../assets/Images/Halls/All Halls/All_Halls_1.jpg";
 import allHalls2 from "./../../assets/Images/Halls/All Halls/All_Halls_2.jpg";
 import allHalls3 from "./../../assets/Images/Halls/All Halls/All_Halls_3.jpg";
 import allHalls4 from "./../../assets/Images/Halls/All Halls/All_Halls_4.jpg";
 import allHalls5 from "./../../assets/Images/Halls/All Halls/All_Halls_5.jpg";
+import allHalls6 from "./../../assets/Images/Halls/All Halls/All_Halls_6.jpg";
+import allHalls7 from "./../../assets/Images/Halls/All Halls/All_Halls_7.jpg";
+import allHalls8 from "./../../assets/Images/Halls/All Halls/All_Halls_8.jpg";
+import allHalls9 from "./../../assets/Images/Halls/All Halls/All_Halls_9.jpg";
+import allHalls10 from "./../../assets/Images/Halls/All Halls/All_Halls_10.jpg";
+import allHalls11 from "./../../assets/Images/Halls/All Halls/All_Halls_11.jpeg";
 import { Link } from "react-router-dom";
+import "./Halls.css";
 
 function AllTheHalls() {
+  const [visibleCount, setVisibleCount] = useState(5);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+  const [showModalImage, setShowModalImage] = useState(false);
+
+  const handleImageClick = (img) => {
+    setModalImage(img);
+    setModalOpen(true);
+    setTimeout(() => setShowModalImage(true), 10);
+  };
+
+  const handleCloseModal = () => {
+    setShowModalImage(false);
+    setTimeout(() => {
+      setModalOpen(false);
+      setModalImage(null);
+    }, 300);
+  };
+
+  const halls = [
+    {
+      image: allHalls1,
+      name: "Andalous Hall",
+      description:
+        "Step into a breathtaking hall adorned with sculptured columns and artistic ceiling details, blending classical architecture with modern flair. The spacious layout flows seamlessly from a grand entrance to a main hall that accommodates large gatherings, making it ideal for both ceremonies and receptions. Dream-like colors and textures create a memorable, sophisticated atmosphere for your special day",
+      location: "Cairo",
+      link: "FirstHall",
+      rate: 5,
+    },
+    {
+      image: allHalls2,
+      name: "Concorde El Salam Hall",
+      description:
+        "This wedding hall features floor-to-ceiling windows that flood the space with natural light, offering stunning views and a warm, inviting ambiance. The open layout allows for versatile seating and decor arrangements, while greenery and light-colored walls enhance the fresh, contemporary feel-perfect for couples seeking a bright and airy celebration",
+      location: "Mansoura",
+      link: "SecondHall",
+      rate: 3.5,
+    },
+    {
+      image: allHalls3,
+      name: "Concorde El Salam Hall",
+      description:
+        "Designed for smaller gatherings, this venue boasts a cozy ceremony space with an eye-catching fireplace and oversized windows. The adjoining reception area features elegant tables, dramatic lighting, and tasteful decor, creating a classic yet intimate environment where every guest feels cherished",
+      location: "Cairo",
+      link: "ThirdHall",
+      rate: 4,
+    },
+    {
+      image: allHalls4,
+      name: "Royal Garden Hall",
+      description:
+        "With unique design elements like a “garden of columns” and textured stucco walls, this wedding hall is a haven for creativity and photographs. Distinct zones guide guests through a curated experience, from a photo gallery to a bouquet toss area, ensuring every moment is both beautiful and memorable",
+      location: "Alexandria",
+      link: "FourthHall",
+      rate: 2.5,
+    },
+    {
+      image: allHalls5,
+      name: "Gardenia Hall",
+      description:
+        "Maximize your celebration with a hall designed for flexibility-convertible stages, movable partitions, and multi-purpose courtyards allow for smooth transitions between ceremony, dining, and dancing. Sustainable materials and thoughtful acoustics ensure comfort, style, and a personalized touch for every event",
+      location: "Mansoura",
+      link: "FifthHall",
+      rate: 4.5,
+    },
+    {
+      image: allHalls6,
+      name: "The Nile Ritz-Carlton",
+      description:
+        "The largest ballroom in Downtown Cairo, Al Qahira Ballroom at The Nile Ritz-Carlton features 1,700 square meters of elegant space, grand foyers, and exquisite chandeliers. It is renowned for hosting the city’s most luxurious weddings and can be divided into five rooms for more intimate celebrations.",
+      location: "Cairo",
+      rate: 4,
+    },
+    {
+      image: allHalls7,
+      name: "Alf Leila Wa Leila",
+      description:
+        "A historic and iconic venue, Alf Leila Wa Leila Ballroom has welcomed Egypt’s elite for decades. With 924 square meters of banquet space, it offers a blend of classic grandeur and modern amenities, perfect for glamorous wedding celebrations.",
+      location: "Cairo",
+      rate: 4.5,
+    },
+    {
+      image: allHalls8,
+      name: "Cleopatra Hall",
+      description:
+        "Located on the Nile, the Cleopatra Ballroom at Semiramis InterContinental Cairo accommodates up to 1,170 guests. Its modern luxury, river views, and versatile layout make it a top choice for large, elegant weddings.",
+      location: "Cairo",
+      rate: 3,
+    },
+    {
+      image: allHalls9,
+      name: "Tutankhamun Hall",
+      description:
+        "The Tutankhamun Ballroom at JW Marriott Hotel Cairo offers one of the city’s most spacious and versatile wedding venues. Its contemporary style and attentive service ensure a seamless, memorable experience for both grand and intimate celebrations.",
+      location: "Cairo",
+      rate: 5,
+    },
+    {
+      image: allHalls10,
+      name: "Marriott Mena House",
+      description:
+        "Famed for its breathtaking views of the Pyramids of Giza, Marriott Mena House offers a magical setting for weddings. Its lush gardens and luxurious ballrooms provide a romantic and unforgettable backdrop for your special day.",
+      location: "Giza",
+      rate: 2.5,
+    },
+    {
+      image: allHalls11,
+      name: "Royal Club",
+      description:
+        "Located on the banks of the Nile in Giza, Royal Club Mohamed Aly is celebrated for its regal ambiance and lush green surroundings. The venue’s elegant halls and serene river views make it a sought-after choice for sophisticated wedding ceremonies.",
+      location: "Giza",
+      rate: 5,
+    },
+  ];
+  const handleViewAllClick = () => {
+    setVisibleCount(halls.length);
+  };
+
+  const renderStars = (rate = 0, max = 5) => {
+    const stars = [];
+    for (let i = 1; i <= max; i++) {
+      if (i <= Math.floor(rate)) {
+        stars.push(<i key={i} className="fa-solid fa-star"></i>);
+      } else if (i - rate <= 0.5) {
+        stars.push(<i key={i} className="fa-solid fa-star-half-stroke"></i>);
+      } else {
+        stars.push(<i key={i} className="fa-regular fa-star"></i>);
+      }
+    }
+    return stars;
+  };
+
   return (
     <>
       <section id="All_the_halls">
@@ -15,172 +154,115 @@ function AllTheHalls() {
             <div className="Title mt-5 mb-3">
               <h2>All The Halls</h2>
             </div>
-            <Link to={"FirstHall"} className="text-decoration-none text-black">
-              <div className="row scroll-container">
-                <div className="col-md-12">
-                  <div className="bg-light d-flex gap-5 scroll">
-                    <img
-                      loading="lazy"
-                      src={allHalls1}
-                      alt=""
-                      width="25%"
-                      height="300"
-                    />
-                    <div className="h-100">
-                      <h3 className="my-2">Andrews Hall</h3>
-                      <p className="my-5">
-                        If you are looking for the best option to hold an
-                        exceptionally special event with complete
-                        professionalism, we invite you to the Concorde El Salam
-                        Hotel in Cairo
-                      </p>
-                      <p className="my-5">
-                        <i className="fa-solid fa-location-dot"></i> Cairo
-                      </p>
-                      <div className="rate my-5 text-warning">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half-stroke"></i>
+            {halls.slice(0, visibleCount).map((item, index) => (
+              <Link
+                to={item.link}
+                className="text-decoration-none text-black"
+                key={index}
+              >
+                <div className="row scroll-container my-3">
+                  <div className="col-md-12">
+                    <div className="bg-light d-flex gap-5 scroll">
+                      <div className="container-fluid">
+                        <div className="row">
+                          <div className="col-3">
+                            <img
+                              loading="lazy"
+                              src={item.image}
+                              alt={item.name}
+                              width="100%"
+                              height="100%"
+                              style={{ cursor: "pointer" }}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setModalImage(item.image);
+                                setModalOpen(true);
+                                handleImageClick(item.image);
+                              }}
+                            />
+                          </div>
+                          <div className="col-9">
+                            <div className="h-100">
+                              <h3 className="my-2">{item.name}</h3>
+                              <p className="my-5">{item.description}</p>
+                              <p className="my-5">
+                                <i className="fa-solid fa-location-dot"></i>{" "}
+                                {item.location}
+                              </p>
+                              <div className="rate my-5 text-warning">
+                                {renderStars(item.rate)}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </Link>
+            ))}
+            {visibleCount < halls.length && (
+              <div className="d-flex justify-content-center my-5">
+                <button className="btn" onClick={handleViewAllClick}>
+                  View all <i className="fa-solid fa-circle-right"></i>
+                </button>
               </div>
-            </Link>
-            <Link to={"SecondHall"} className="text-decoration-none text-black">
-              <div className="row my-3 scroll-container">
-                <div className="col-md-12">
-                  <div className="bg-light d-flex gap-5 scroll">
-                    <img
-                      loading="lazy"
-                      src={allHalls2}
-                      alt=""
-                      width="25%"
-                      height="300"
-                    />
-                    <div className="h-100 ps-3">
-                      <h3 className="my-2">Concorde El Salam Hall</h3>
-                      <p className="mt-5 flex-wrap">
-                        If you're planning a wedding and looking for a suitable
-                        venue,
-                      </p>{" "}
-                      <p>
-                        Amarante Golf Plaza Hotel in Cairo is your best choice.
-                        Located in Greater Cairo on the Ismailia Desert Road, it
-                        offers stunning views of the sea, green hills
-                      </p>
-                      <p className="my-5">
-                        <i className="fa-solid fa-location-dot"></i> Mansoura
-                      </p>
-                      <div className="rate my-5 text-warning">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half-stroke"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={"ThirdHall"} className="text-decoration-none text-black">
-              <div className="row my-3 scroll-container">
-                <div className="col-md-12">
-                  <div className="bg-light d-flex gap-5 scroll">
-                    <img
-                      loading="lazy"
-                      src={allHalls3}
-                      alt=""
-                      width="25%"
-                      height="300"
-                    />
-                    <div className="h-100">
-                      <h3 className="my-2">Amarante Hall</h3>
-                      <p className="my-5">Descreption</p>
-                      <p className="my-5">
-                        <i className="fa-solid fa-location-dot"></i> Cairo
-                      </p>
-                      <div className="rate my-5 text-warning">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half-stroke"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={"FourthHall"} className="text-decoration-none text-black">
-              <div className="row my-3 scroll-container">
-                <div className="col-md-12">
-                  <div className="bg-light d-flex gap-5 scroll">
-                    <img
-                      loading="lazy"
-                      src={allHalls4}
-                      alt=""
-                      width="25%"
-                      height="300"
-                    />
-                    <div className="h-100">
-                      <h3 className="my-2">Royal Garden Hall</h3>
-                      <p className="my-5">Descreption</p>
-                      <p className="my-5">
-                        <i className="fa-solid fa-location-dot"></i> Alexandria
-                      </p>
-                      <div className="rate my-5 text-warning">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half-stroke"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={"FifthHall"} className="text-decoration-none text-black">
-              <div className="row my-3 scroll-container">
-                <div className="col-md-12">
-                  <div className="bg-light d-flex gap-5 scroll">
-                    <img
-                      loading="lazy"
-                      src={allHalls5}
-                      alt=""
-                      width="25%"
-                      height="300"
-                    />
-                    <div className="h-100">
-                      <h3 className="my-2">Gardenia Hall</h3>
-                      <p className="my-5">Descreption</p>
-                      <p className="my-5">
-                        <i className="fa-solid fa-location-dot"></i> Mansoura
-                      </p>
-                      <div className="rate my-5 text-warning">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half-stroke"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <div className="d-flex justify-content-center my-5">
-              <button className="btn">
-                View all <i className="fa-solid fa-circle-right"></i>
-              </button>
-            </div>
+            )}
           </div>
         </div>
       </section>
+
+      {modalOpen && (
+        <div
+          className="modal-backdrop"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "rgba(0,0,0,0.7)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+          onClick={handleCloseModal}
+        >
+          <img
+            src={modalImage}
+            alt="Hall"
+            className={`modal-image ${showModalImage ? "show" : ""}`}
+            style={{
+              maxWidth: "70vw",
+              maxHeight: "70vh",
+              borderRadius: "8px",
+              boxShadow: "0 2px 16px #000",
+              transition:
+                "transform 0.3s cubic-bezier(.4,2,.6,1), opacity 0.3s",
+              transform: showModalImage ? "scale(1)" : "scale(0.8)",
+              opacity: showModalImage ? 1 : 0,
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            style={{
+              position: "absolute",
+              top: 30,
+              right: 30,
+              fontSize: 32,
+              color: "#fff",
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={handleCloseModal}
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+      )}
     </>
   );
 }

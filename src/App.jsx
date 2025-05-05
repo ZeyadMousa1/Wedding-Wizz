@@ -3,6 +3,7 @@ import {
   RouterProvider,
   Outlet,
   useLocation,
+  Route,
 } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
 function LayoutWithNavbarControl() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isLayout = location.pathname === "/layout"; // Adjust if you have a layout route
+  const isLayout = location.pathname === "/layout";
 
   return (
     <>
@@ -53,13 +54,17 @@ function LayoutWithNavbarControl() {
         </Header>
       )}
       {!isHome && !isLayout && <Navbar />}
-      <Outlet /> {/* Render child routes */}
+      <Outlet />
     </>
   );
 }
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

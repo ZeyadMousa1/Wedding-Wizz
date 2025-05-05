@@ -377,6 +377,8 @@ footer .youtube:hover {
 #All_the_halls img {
   color: #000;
   object-fit: cover;
+  min-height: 350px;
+  max-height: 350px;
 }
 
 #All_the_halls img:hover {

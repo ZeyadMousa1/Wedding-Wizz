@@ -4,7 +4,7 @@ import Logo from "./../../assets/Images/Logo/rings.png";
 function Footer() {
   return (
     <>
-      <footer>
+      <footer className="mt-5">
         <div className="footer bg-black pt-5">
           <div className="container">
             <div className="row">

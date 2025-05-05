@@ -25,28 +25,7 @@ function Search() {
                 </option>
                 <option>Cairo</option>
                 <option>Mansoura</option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div className="col-md-3">
-              <label htmlFor="validationCustom04_2" className="form-label">
-                Choose your Date
-              </label>
-              <select
-                className="form-select"
-                id="validationCustom04_2"
-                required="required"
-              >
-                <option disabled="disabled" value="selected">
-                  Choose...
-                </option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
+                <option>Alexandria</option>
               </select>
             </div>
             <div className="col-md-3">
@@ -68,6 +47,7 @@ function Search() {
                 <option>...</option>
               </select>
             </div>
+            <div className="col-md-3"></div>
             <div className="col-12">
               <button className="btn btn-primary" type="submit">
                 Search

@@ -1,18 +1,40 @@
-import React, { useState } from "react";
-import newest1 from "./../../assets/Images/Halls/Newest/Newest_1.jpg";
-import newest2 from "./../../assets/Images/Halls/Newest/Newest_2.jpg";
-import newest3 from "./../../assets/Images/Halls/Newest/Newest_3.jpg";
-import newest4 from "./../../assets/Images/Halls/Newest/Newest_4.jpg";
-import newest5 from "./../../assets/Images/Halls/Newest/Newest_5.jpg";
+import Slider from "react-slick";
+import topRated1 from "./../../assets/Images/Halls/Top Rated/Top_Rated_1.jpg";
+import topRated2 from "./../../assets/Images/Halls/Top Rated/Top_Rated_2.jpg";
+import topRated3 from "./../../assets/Images/Halls/Top Rated/Top_Rated_3.jpg";
+import topRated4 from "./../../assets/Images/Halls/Top Rated/Top_Rated_4.jpg";
+import topRated5 from "./../../assets/Images/Halls/Top Rated/Top_Rated_5.jpg";
+import "./HallsSlider.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Newest() {
+const Halls = [
+  {
+    image: topRated1,
+    text: "rhzdrh",
+  },
+  {
+    image: topRated2,
+    text: "",
+  },
+  {
+    image: topRated3,
+    text: "",
+  },
+  {
+    image: topRated4,
+    text: "",
+  },
+  {
+    image: topRated5,
+    text: "",
+  },
+];
+
+function HallsSlider() {
   // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
-
-  // Images array for easy mapping
-  const images = [newest1, newest2, newest3, newest4, newest5];
 
   // Open modal with selected image
   const handleImageClick = (img) => {
@@ -26,44 +48,44 @@ function Newest() {
     setModalImage(null);
   };
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+
   return (
     <>
-      <section id="Newest">
-        <div className="Newset">
-          <div className="container-fluid">
-            <div className="Title mt-5 mb-3">
-              <h2>
-                Newest <i className="fa-solid fa-arrow-right"></i>
-              </h2>
+      <div className="container-fluid my-5">
+        <h2>
+          Top Rated <i className="fa-solid fa-arrow-right"></i>
+        </h2>
+        <Slider {...settings}>
+          {Halls.map((hall, idx) => (
+            <div className="slider-image-wrapper" key={idx}>
+              <div className="slider-image-container">
+                <img
+                  src={hall.image}
+                  alt={`Top Rated Hall ${idx + 1}`}
+                  className="slider-image"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleImageClick(hall.image);
+                  }}
+                />
+                <p className="slider-overlay">
+                  {hall.text || "More details..."}
+                </p>
+              </div>
             </div>
-            <div className="row">
-              {images.map((img, idx) => (
-                <div className="col-md-2" key={idx}>
-                  <div>
-                    {/* Remove Link if not needed, or add to={} */}
-                    <Link to="#">
-                      <img
-                        loading="lazy"
-                        src={img}
-                        alt={`Newest ${idx + 1}`}
-                        width="100%"
-                        height="325"
-                        style={{ cursor: "pointer" }}
-                        onClick={(e) => {
-                          e.preventDefault(); // Prevent navigation
-                          handleImageClick(img);
-                        }}
-                      />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+          ))}
+        </Slider>
+      </div>
 
-      {/* Modal Popup */}
       {modalOpen && (
         <div
           className="modal-backdrop"
@@ -125,4 +147,4 @@ function Newest() {
   );
 }
 
-export default Newest;
+export default HallsSlider;
