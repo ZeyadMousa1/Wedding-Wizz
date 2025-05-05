@@ -41,3 +41,13 @@
 .slider-image-container:hover .slider-overlay {
   opacity: 1;
 }
+
+.modal-image {
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.3s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+.modal-image.show {
+  transform: scale(1);
+  opacity: 1;
+}

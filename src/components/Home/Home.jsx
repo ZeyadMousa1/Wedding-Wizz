@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 import WeddingHalls from "./../../assets/Images/halls/Wedding halls.jpg";
 import Photography from "./../../assets/Images/Photography and video.jpg";
 import invitaion from "./../../assets/Images/marriage invitaion.jpg";

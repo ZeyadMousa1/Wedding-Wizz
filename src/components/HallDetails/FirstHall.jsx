@@ -1,11 +1,24 @@
 import React, { useState } from "react";
-import hall1 from "./../../assets/Images/Halls/All Halls/All_Halls_1.jpg";
-import TopRated from "../Halls/topRated";
-import Newest from "../Halls/Newest";
+import hall1 from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-1.jpg";
+import hall2 from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-2.jpg";
+import hall3 from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-3.jpg";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import NewestSlider from "../HallsSlider/NewestSlider";
+import HallsSlider from "../HallsSlider/HallsSlider";
 
-function HallDetails() {
+function FirstHall() {
+  const hall = {
+    name: "Meridien Heliopolis Hotel",
+    CLASSIFICATION: "Hotel",
+    location: "Cairo",
+    description:
+      "Step into a breathtaking hall adorned with sculptured columns and artistic ceiling details, blending classical architecture with modern flair. The spacious layout flows seamlessly from a grand entrance to a main hall that accommodates large gatherings, making it ideal for both ceremonies and receptions. Dream-like colors and textures create a memorable, sophisticated atmosphere for your special day",
+    link: "FirstHall",
+    capacity: "300 - 500",
+    rate: 5,
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,6 +38,20 @@ function HallDetails() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+  };
+
+  const renderStars = (rate = 0, max = 5) => {
+    const stars = [];
+    for (let i = 1; i <= max; i++) {
+      if (i <= Math.floor(rate)) {
+        stars.push(<i key={i} className="fa-solid fa-star"></i>);
+      } else if (i - rate <= 0.5) {
+        stars.push(<i key={i} className="fa-solid fa-star-half-stroke"></i>);
+      } else {
+        stars.push(<i key={i} className="fa-regular fa-star"></i>);
+      }
+    }
+    return stars;
   };
 
   return (
@@ -121,34 +148,97 @@ function HallDetails() {
             </div>
           </div>
           <div className="col-6 text-center">
-            <h2>Andrews Hall</h2>
-            <img src={hall1} width={700} height={700} className="py-5" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              optio earum officia maxime, quisquam dolores illo deserunt ab
-              atque soluta? Quasi in incidunt ea dolorem distinctio, eligendi
-              sint modi inventore.
-            </p>
+            <h2>{hall.name}</h2>
+            <div id="carouselExampleIndicators" className="carousel slide my-5">
+              <div className="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  className="active"
+                  ariaCurrent="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src={hall1} width={700} height={700} alt={hall.name} />
+                </div>
+                <div className="carousel-item">
+                  <img src={hall2} width={700} height={700} alt={hall.name} />
+                </div>
+                <div className="carousel-item">
+                  <img src={hall3} width={700} height={700} alt={hall.name} />
+                </div>
+              </div>
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+            <p>{hall.description}</p>
             <div className="row">
-              <div className="rate my-5 text-warning col-6">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star-half-stroke"></i>
+              <div className="rate my-5 col-6">
+                <span className="fw-bold">location :</span> {hall.location}
               </div>
               <div className="rate my-5 col-6">
-                <p>capacity: 500</p>
+                <p>
+                  <span className="fw-bold">Classification :</span>{" "}
+                  {hall.CLASSIFICATION}
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="rate my-5 text-warning col-6">
+                <span className="fw-bold text-black">Rate : </span>
+                {renderStars(hall.rate)}
+              </div>
+              <div className="rate my-5 col-6">
+                <p>
+                  <span className="fw-bold">capacity :</span> {hall.capacity}
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <TopRated />
-      <Newest />
+      <HallsSlider />
+      <NewestSlider />
       <Footer />
     </>
   );
 }
 
-export default HallDetails;
+export default FirstHall;

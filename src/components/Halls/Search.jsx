@@ -26,11 +26,12 @@ function Search() {
                 <option>Cairo</option>
                 <option>Mansoura</option>
                 <option>Alexandria</option>
+                <option>Giza</option>
               </select>
             </div>
             <div className="col-md-3">
               <label htmlFor="validationCustom04_3" className="form-label">
-                Choose your Budget
+                Choose your Maximum Budget
               </label>
               <select
                 className="form-select"
@@ -40,11 +41,12 @@ function Search() {
                 <option disabled="disabled" value="selected">
                   Choose...
                 </option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
-                <option>...</option>
+                <option value="15,000">Less Than 15,000</option>
+                <option value="20,000"> 20,000</option>
+                <option value="30,000">30,000</option>
+                <option value="40,000">40,000</option>
+                <option value="50,000">50,000</option>
+                <option value="50,000">More Than 50,000</option>
               </select>
             </div>
             <div className="col-md-3"></div>

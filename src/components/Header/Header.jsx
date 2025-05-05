@@ -6,6 +6,7 @@ import image_2 from "./../../assets/Images/header_images/2.jpg";
 import image_3 from "./../../assets/Images/header_images/3.jpg";
 import image_4 from "./../../assets/Images/header_images/4.jpg";
 import image_5 from "./../../assets/Images/header_images/5.jpg";
+import "./Header.css";
 
 function Header() {
   return (
@@ -103,7 +104,6 @@ function Header() {
                   </div>
                 </div>
               </nav>
-              {/* Header-content */}
               <div className="header_content d-block w-100">
                 <div className="content">
                   <h1 className="my-5">

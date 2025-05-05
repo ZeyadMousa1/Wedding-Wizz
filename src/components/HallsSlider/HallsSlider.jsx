@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Halls = [
   {
     image: topRated1,
-    text: "rhzdrh",
+    text: "",
   },
   {
     image: topRated2,
@@ -32,20 +32,22 @@ const Halls = [
 ];
 
 function HallsSlider() {
-  // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [showModalImage, setShowModalImage] = useState(false);
 
-  // Open modal with selected image
   const handleImageClick = (img) => {
     setModalImage(img);
     setModalOpen(true);
+    setTimeout(() => setShowModalImage(true), 10);
   };
 
-  // Close modal
   const handleCloseModal = () => {
-    setModalOpen(false);
-    setModalImage(null);
+    setShowModalImage(false);
+    setTimeout(() => {
+      setModalOpen(false);
+      setModalImage(null);
+    }, 300);
   };
 
   var settings = {
@@ -114,6 +116,10 @@ function HallsSlider() {
                     maxHeight: "50vh",
                     borderRadius: "8px",
                     boxShadow: "0 2px 16px #000",
+                    transition:
+                      "transform 0.3s cubic-bezier(.4,2,.6,1), opacity 0.3s",
+                    transform: showModalImage ? "scale(1)" : "scale(0.8)",
+                    opacity: showModalImage ? 1 : 0,
                   }}
                   onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
                 />
