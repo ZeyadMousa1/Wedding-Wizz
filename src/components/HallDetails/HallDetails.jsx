@@ -1,25 +1,13 @@
 import React, { useState } from "react";
-import hall1 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-1.jpg";
-import hall2 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-2.jpg";
-import hall3 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-3.jpg";
-import hall4 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-4.jpg";
-import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
+import Footer from "../Footer/Footer";
+import { halls } from "./hallData";
 
-function FifthHall() {
-  const hall = {
-    image: hall1,
-    name: "Gardenia Hall",
-    CLASSIFICATION: "hall",
-    description:
-      "Maximize your celebration with a hall designed for flexibility-convertible stages, movable partitions, and multi-purpose courtyards allow for smooth transitions between ceremony, dining, and dancing. Sustainable materials and thoughtful acoustics ensure comfort, style, and a personalized touch for every event",
-    location: "Cairo - Alexandria",
-    link: "FifthHall",
-    capacity: "100 - 200",
-    rate: 4.5,
-  };
+function HallDetails() {
+  const { hallId } = useParams();
+  const hall = halls.find((h) => h.link === hallId);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -28,6 +16,8 @@ function FifthHall() {
     date: "",
     comments: "",
   });
+
+  if (!hall) return <div>Hall not found</div>;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,9 +47,14 @@ function FifthHall() {
   };
 
   return (
-    <>
+    <div className="hall-details">
+      {/* <img src={hall.image} alt={hall.name} />
+      <h1>{hall.name}</h1>
+      <p>Location: {hall.location}</p>
+      <p>Capacity: {hall.capacity}</p>
+      <p>{hall.description}</p> */}
       <div className="container">
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
             <Link className="btn btn-primary mb-4" to={"../halls"}>
               <i className="fa-solid fa-arrow-left"></i> Back
@@ -106,7 +101,7 @@ function FifthHall() {
                         className="form-control"
                         name="phone"
                         id="floatingNumber"
-                        value={formData.number}
+                        value={formData.phone}
                         onChange={handleChange}
                         placeholder="phone"
                         required
@@ -140,7 +135,7 @@ function FifthHall() {
                     </div>
                     <button
                       type="submit"
-                      className="btn btn-primary btn-lg mt-5 w-100"
+                      className="btn btn-primary btn-lg my-5 w-100"
                     >
                       Book Now
                     </button>
@@ -151,7 +146,7 @@ function FifthHall() {
           </div>
           <div className="col-6 text-center">
             <h2>{hall.name}</h2>
-            <div id="carouselExampleIndicators" className="carousel slide my-5">
+            {/* <div id="carouselExampleIndicators" className="carousel slide my-5">
               <div className="carousel-indicators">
                 <button
                   type="button"
@@ -173,12 +168,6 @@ function FifthHall() {
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
                 ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="3"
-                  aria-label="Slide 4"
-                ></button>
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -189,9 +178,6 @@ function FifthHall() {
                 </div>
                 <div className="carousel-item">
                   <img src={hall3} width={700} height={700} alt={hall.name} />
-                </div>
-                <div className="carousel-item">
-                  <img src={hall4} width={700} height={700} alt={hall.name} />
                 </div>
               </div>
               <button
@@ -218,7 +204,7 @@ function FifthHall() {
                 ></span>
                 <span className="visually-hidden">Next</span>
               </button>
-            </div>
+            </div> */}
             <p>{hall.description}</p>
             <div className="row">
               <div className="rate my-5 col-6">
@@ -248,7 +234,8 @@ function FifthHall() {
       <HallsSlider />
       <NewestSlider />
       <Footer />
-    </>
+    </div>
   );
 }
-export default FifthHall;
+
+export default HallDetails;

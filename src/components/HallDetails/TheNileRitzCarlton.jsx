@@ -1,25 +1,22 @@
 import React, { useState } from "react";
-import hall1 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-1.jpg";
-import hall2 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-2.jpg";
-import hall3 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-3.jpg";
-import hall4 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-4.jpg";
-import hall5 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-5.jpg";
+import The_Nile_Ritz_Carlton from "./../../assets/Images/Halls/All Halls/The-Nile-Ritz-Carlton.jpg";
+
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
 
-function FourthHall() {
+function TheNileRitzCarlton() {
   const hall = {
-    image: hall1,
-    name: "Sky Executive Resort",
+    image: The_Nile_Ritz_Carlton,
+    name: "The Nile Ritz Carlton",
     CLASSIFICATION: "Hotel",
     description:
-      "With unique design elements like a “garden of columns” and textured stucco walls, this wedding hall is a haven for creativity and photographs. Distinct zones guide guests through a curated experience, from a photo gallery to a bouquet toss area, ensuring every moment is both beautiful and memorable",
+      "Designed for smaller gatherings, this venue boasts a cozy ceremony space with an eye-catching fireplace and oversized windows. The adjoining reception area features elegant tables, dramatic lighting, and tasteful decor, creating a classic yet intimate environment where every guest feels cherished",
     location: "Cairo",
-    link: "FourthHall",
-    capacity: 500,
-    rate: 5,
+    link: "TheNileRitzCarlton",
+    capacity: 300,
+    rate: 4,
   };
 
   const [formData, setFormData] = useState({
@@ -56,11 +53,10 @@ function FourthHall() {
     }
     return stars;
   };
-
   return (
     <>
       <div className="container">
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
             <Link className="btn btn-primary mb-4" to={"../halls"}>
               <i className="fa-solid fa-arrow-left"></i> Back
@@ -174,34 +170,31 @@ function FourthHall() {
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
                 ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="3"
-                  aria-label="Slide 4"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="4"
-                  aria-label="Slide 5"
-                ></button>
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={hall1} width={700} height={700} alt={hall.name} />
+                  <img
+                    src={The_Nile_Ritz_Carlton}
+                    width={700}
+                    height={700}
+                    alt={hall.name}
+                  />
                 </div>
                 <div className="carousel-item">
-                  <img src={hall2} width={700} height={700} alt={hall.name} />
+                  <img
+                    src={The_Nile_Ritz_Carlton}
+                    width={700}
+                    height={700}
+                    alt={hall.name}
+                  />
                 </div>
                 <div className="carousel-item">
-                  <img src={hall3} width={700} height={700} alt={hall.name} />
-                </div>
-                <div className="carousel-item">
-                  <img src={hall4} width={700} height={700} alt={hall.name} />
-                </div>
-                <div className="carousel-item">
-                  <img src={hall5} width={700} height={700} alt={hall.name} />
+                  <img
+                    src={The_Nile_Ritz_Carlton}
+                    width={700}
+                    height={700}
+                    alt={hall.name}
+                  />
                 </div>
               </div>
               <button
@@ -262,4 +255,4 @@ function FourthHall() {
   );
 }
 
-export default FourthHall;
+export default TheNileRitzCarlton;

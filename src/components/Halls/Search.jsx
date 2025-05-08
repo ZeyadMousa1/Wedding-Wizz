@@ -20,9 +20,7 @@ function Search() {
                 id="validationCustom04"
                 required="required"
               >
-                <option disabled="disabled" value="selected">
-                  Choose...
-                </option>
+                <option value="selected">Choose...</option>
                 <option>Cairo</option>
                 <option>Mansoura</option>
                 <option>Alexandria</option>
@@ -38,9 +36,7 @@ function Search() {
                 id="validationCustom04_3"
                 required="required"
               >
-                <option disabled="disabled" value="selected">
-                  Choose...
-                </option>
+                <option value="selected">Choose...</option>
                 <option value="15,000">Less Than 15,000</option>
                 <option value="20,000"> 20,000</option>
                 <option value="30,000">30,000</option>

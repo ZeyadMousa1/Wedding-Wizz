@@ -50,7 +50,7 @@ function Newest() {
                         height="325"
                         style={{ cursor: "pointer" }}
                         onClick={(e) => {
-                          e.preventDefault(); // Prevent navigation
+                          e.preventDefault();
                           handleImageClick(img);
                         }}
                       />
@@ -98,7 +98,8 @@ function Newest() {
               </div>
               <div className="col-12 text-center mt-5">
                 <Link className="btn text-light bg-primary fs-5" to={""}>
-                  Go to Hall Page <i class="fa-solid fa-arrow-right fs-5"></i>
+                  Go to Hall Page{" "}
+                  <i className="fa-solid fa-arrow-right fs-5"></i>
                 </Link>
               </div>
             </div>

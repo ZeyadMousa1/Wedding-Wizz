@@ -1,24 +1,25 @@
 import React, { useState } from "react";
-import hall1 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-1.jpg";
-import hall2 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-2.jpg";
-import hall3 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-3.jpg";
-import hall4 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-4.jpg";
-import hall5 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-5.jpg";
+import hall1 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-1.jpg";
+import hall2 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-2.jpg";
+import hall3 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-3.jpg";
+import hall4 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-4.jpg";
+import hall5 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-5.jpg";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
 
-function SecondHall() {
+function GardeniaHall() {
   const hall = {
-    name: "Grand Nile Tower",
+    image: hall1,
+    name: "Sky Executive Resort",
     CLASSIFICATION: "Hotel",
     description:
-      "This wedding hall features floor-to-ceiling windows that flood the space with natural light, offering stunning views and a warm, inviting ambiance. The open layout allows for versatile seating and decor arrangements, while greenery and light-colored walls enhance the fresh, contemporary feel-perfect for couples seeking a bright and airy celebration",
+      "With unique design elements like a “garden of columns” and textured stucco walls, this wedding hall is a haven for creativity and photographs. Distinct zones guide guests through a curated experience, from a photo gallery to a bouquet toss area, ensuring every moment is both beautiful and memorable",
     location: "Cairo",
-    link: "SecondHall",
+    link: "GardeniaHall",
     capacity: 500,
-    rate: 3.5,
+    rate: 5,
   };
 
   const [formData, setFormData] = useState({
@@ -59,7 +60,7 @@ function SecondHall() {
   return (
     <>
       <div className="container">
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
             <Link className="btn btn-primary mb-4" to={"../halls"}>
               <i className="fa-solid fa-arrow-left"></i> Back
@@ -261,4 +262,4 @@ function SecondHall() {
   );
 }
 
-export default SecondHall;
+export default GardeniaHall;

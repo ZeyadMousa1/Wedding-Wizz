@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-import hall1 from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-1.jpg";
-import hall2 from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-2.jpg";
-import hall3 from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-3.jpg";
+import hall1 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-1.jpg";
+import hall2 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-2.jpg";
+import hall3 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-3.jpg";
+import hall4 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-4.jpg";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
 
-function ThirdHall() {
+function GardeniaHall() {
   const hall = {
     image: hall1,
-    name: "Sky Executive Resort",
-    CLASSIFICATION: "Hotel",
+    name: "Gardenia Hall",
+    CLASSIFICATION: "hall",
     description:
-      "Designed for smaller gatherings, this venue boasts a cozy ceremony space with an eye-catching fireplace and oversized windows. The adjoining reception area features elegant tables, dramatic lighting, and tasteful decor, creating a classic yet intimate environment where every guest feels cherished",
-    location: "Cairo",
-    link: "ThirdHall",
-    capacity: 300,
-    rate: 4,
+      "Maximize your celebration with a hall designed for flexibility-convertible stages, movable partitions, and multi-purpose courtyards allow for smooth transitions between ceremony, dining, and dancing. Sustainable materials and thoughtful acoustics ensure comfort, style, and a personalized touch for every event",
+    location: "Cairo - Alexandria",
+    link: "GardeniaHall",
+    capacity: "100 - 200",
+    rate: 4.5,
   };
 
   const [formData, setFormData] = useState({
@@ -54,10 +55,11 @@ function ThirdHall() {
     }
     return stars;
   };
+
   return (
     <>
       <div className="container">
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
             <Link className="btn btn-primary mb-4" to={"../halls"}>
               <i className="fa-solid fa-arrow-left"></i> Back
@@ -171,6 +173,12 @@ function ThirdHall() {
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
                 ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -181,6 +189,9 @@ function ThirdHall() {
                 </div>
                 <div className="carousel-item">
                   <img src={hall3} width={700} height={700} alt={hall.name} />
+                </div>
+                <div className="carousel-item">
+                  <img src={hall4} width={700} height={700} alt={hall.name} />
                 </div>
               </div>
               <button
@@ -240,5 +251,4 @@ function ThirdHall() {
     </>
   );
 }
-
-export default ThirdHall;
+export default GardeniaHall;

@@ -14,11 +14,13 @@ import Halls from "./components/Halls/Halls";
 import NotFound from "./components/NotFound/NotFound";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import FirstHall from "./components/HallDetails/FirstHall";
-import SecondHall from "./components/HallDetails/SecondHall";
-import ThirdHall from "./components/HallDetails/ThirdHall";
-import FourthHall from "./components/HallDetails/FourthHall";
-import FifthHall from "./components/HallDetails/FifthHall";
+// import MeridienHeliopolisHotel from "./components/HallDetails/MeridienHeliopolisHotel";
+// import SkyExecutiveResort from "./components/HallDetails/SkyExecutiveResort";
+// import GardeniaHall from "./components/HallDetails/GardeniaHall";
+// import GrandNileTower from "./components/HallDetails/GrandNileTower";
+// import TriumphHotelElTagamoa from "./components/HallDetails/TriumphHotelElTagamoa";
+// import TheNileRitzCarlton from "./components/HallDetails/TheNileRitzCarlton";
+import HallDetails from "./components/HallDetails/HallDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,11 +33,19 @@ const router = createBrowserRouter([
       { path: "About", element: <About /> },
       { path: "Contact", element: <Contact /> },
       { path: "Halls", element: <Halls /> },
-      { path: "Halls/FirstHall", element: <FirstHall /> },
-      { path: "Halls/SecondHall", element: <SecondHall /> },
-      { path: "Halls/ThirdHall", element: <ThirdHall /> },
-      { path: "Halls/FourthHall", element: <FourthHall /> },
-      { path: "Halls/FifthHall", element: <FifthHall /> },
+      // {
+      //   path: "Halls/MeridienHeliopolisHotel",
+      //   element: <MeridienHeliopolisHotel />,
+      // },
+      // { path: "Halls/GrandNileTower", element: <GrandNileTower /> },
+      // { path: "Halls/SkyExecutiveResort", element: <SkyExecutiveResort /> },
+      // {
+      //   path: "Halls/TriumphHotelElTagamoa",
+      //   element: <TriumphHotelElTagamoa />,
+      // },
+      // { path: "Halls/GardeniaHall", element: <GardeniaHall /> },
+      // { path: "Halls/TheNileRitzCarlton", element: <TheNileRitzCarlton /> },
+      { path: "Halls/:hallId", element: <HallDetails /> },
       { path: "*", element: <NotFound /> },
     ],
   },

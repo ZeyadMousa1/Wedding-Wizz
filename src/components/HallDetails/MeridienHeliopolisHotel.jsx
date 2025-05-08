@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
 
-function FirstHall() {
+function MeridienHeliopolisHotel() {
   const hall = {
     name: "Meridien Heliopolis Hotel",
     CLASSIFICATION: "Hotel",
     location: "Cairo",
     description:
       "Step into a breathtaking hall adorned with sculptured columns and artistic ceiling details, blending classical architecture with modern flair. The spacious layout flows seamlessly from a grand entrance to a main hall that accommodates large gatherings, making it ideal for both ceremonies and receptions. Dream-like colors and textures create a memorable, sophisticated atmosphere for your special day",
-    link: "FirstHall",
+    link: "MeridienHeliopolisHotel",
     capacity: "300 - 500",
     rate: 5,
   };
@@ -57,7 +57,7 @@ function FirstHall() {
   return (
     <>
       <div className="container">
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
             <Link className="btn btn-primary mb-4" to={"../halls"}>
               <i className="fa-solid fa-arrow-left"></i> Back
@@ -241,4 +241,4 @@ function FirstHall() {
   );
 }
 
-export default FirstHall;
+export default MeridienHeliopolisHotel;
