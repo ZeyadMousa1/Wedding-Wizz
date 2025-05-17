@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import WeddingHalls from "./../../assets/Images/halls/Wedding halls.jpg";
+import WeddingHalls from "./../../assets/Images/Halls/Wedding halls.jpg";
 import Photography from "./../../assets/Images/Photography and video.jpg";
 import invitaion from "./../../assets/Images/marriage invitaion.jpg";
 import car from "./../../assets/Images/Wedding car.jpg";
