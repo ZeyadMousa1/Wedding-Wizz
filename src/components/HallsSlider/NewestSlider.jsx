@@ -11,19 +11,23 @@ import { Link } from "react-router-dom";
 const Halls = [
   {
     image: newest1,
-    text: "",
+    name: "Blue Nile Venue",
   },
   {
     image: newest2,
+    name: "Starlight Banquet Hall",
   },
   {
     image: newest3,
+    name: "Palm Oasis Hall",
   },
   {
     image: newest4,
+    name: "Celestial Ballroom",
   },
   {
     image: newest5,
+    name: "Lavender Fields Venue",
   },
 ];
 
@@ -80,16 +84,13 @@ function NewestSlider() {
                     handleImageClick(img);
                   }}
                 />
-                <p className="slider-overlay">
-                  {img.text || "More details..."}
-                </p>
+                <p className="slider-overlay">{img.name}</p>
               </div>
             </div>
           ))}
         </Slider>
       </div>
 
-      {/* Modal Popup */}
       {modalOpen && (
         <div
           className="modal-backdrop"
@@ -123,17 +124,8 @@ function NewestSlider() {
                     transform: showModalImage ? "scale(1)" : "scale(0.8)",
                     opacity: showModalImage ? 1 : 0,
                   }}
-                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
+                  onClick={(e) => e.stopPropagation()}
                 />
-              </div>
-              <div className="col-12 text-center mt-5">
-                <Link
-                  className="btn text-light bg-primary fs-5"
-                  to={modalImage ? `/hall/${modalImage.id || ""}` : "#"}
-                >
-                  Go to Hall Page{" "}
-                  <i className="fa-solid fa-arrow-right fs-5"></i>
-                </Link>
               </div>
             </div>
           </div>

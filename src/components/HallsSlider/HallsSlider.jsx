@@ -1,33 +1,32 @@
 import Slider from "react-slick";
-import topRated1 from "./../../assets/Images/Halls/Top Rated/Top_Rated_1.jpg";
-import topRated2 from "./../../assets/Images/Halls/Top Rated/Top_Rated_2.jpg";
-import topRated3 from "./../../assets/Images/Halls/Top Rated/Top_Rated_3.jpg";
-import topRated4 from "./../../assets/Images/Halls/Top Rated/Top_Rated_4.jpg";
-import topRated5 from "./../../assets/Images/Halls/Top Rated/Top_Rated_5.jpg";
+import topRated1 from "./../../assets/Images/Halls/Top Rated/Tut-ankh-amun-Hall.jpg";
+import topRated2 from "./../../assets/Images/Halls/Top Rated/Crystal-Lotus-Hall.jpg";
+import topRated3 from "./../../assets/Images/Halls/Top Rated/Diamond-View-Ballroom.jpg";
+import topRated4 from "./../../assets/Images/Halls/Top Rated/Harmony Event Hall.jpg";
+import topRated5 from "./../../assets/Images/Halls/Top Rated/Meridien-Heliopolis-Hotel-1.jpg";
 import "./HallsSlider.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Halls = [
   {
     image: topRated1,
-    text: "",
+    name: "Tut ankh amun Hall",
   },
   {
     image: topRated2,
-    text: "",
+    name: "Crystal Lotus Hall",
   },
   {
     image: topRated3,
-    text: "",
+    name: "Diamond View Ballroom",
   },
   {
     image: topRated4,
-    text: "",
+    name: "Harmony Event Hall",
   },
   {
     image: topRated5,
-    text: "",
+    name: "Meridien Heliopolis Hotel",
   },
 ];
 
@@ -80,7 +79,7 @@ function HallsSlider() {
                   }}
                 />
                 <p className="slider-overlay">
-                  {hall.text || "More details..."}
+                  {hall.name || "More details..."}
                 </p>
               </div>
             </div>
@@ -121,13 +120,8 @@ function HallsSlider() {
                     transform: showModalImage ? "scale(1)" : "scale(0.8)",
                     opacity: showModalImage ? 1 : 0,
                   }}
-                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
+                  onClick={(e) => e.stopPropagation()}
                 />
-              </div>
-              <div className="col-12 text-center mt-5">
-                <Link className="btn text-light bg-primary fs-5" to={""}>
-                  Go to Hall Page <i class="fa-solid fa-arrow-right fs-5"></i>
-                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { userContext } from "../../context/userContext";
 import Logo from "./../../assets/Images/Logo/rings.png";
 import image_1 from "./../../assets/Images/header_images/1.jpg";
 import image_2 from "./../../assets/Images/header_images/2.jpg";
@@ -7,8 +9,21 @@ import image_3 from "./../../assets/Images/header_images/3.jpg";
 import image_4 from "./../../assets/Images/header_images/4.jpg";
 import image_5 from "./../../assets/Images/header_images/5.jpg";
 import "./Header.css";
+import { AuthContext } from "../../context/AuthContext";
+import ProfilePopup from "../Navbar/ProfilePopup";
 
 function Header() {
+  let { isLogin, setLogin } = useContext(userContext);
+  const { userName } = useContext(AuthContext);
+
+  let navigate = useNavigate();
+
+  function logOut() {
+    localStorage.removeItem("userToken");
+    setLogin(null);
+    navigate("/login");
+  }
+
   return (
     <header>
       <div className="hero">
@@ -81,29 +96,40 @@ function Header() {
                         </NavLink>
                       </li>
                     </ul>
-                    <button className="btn rounded-5" type="submit">
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "nav-link active" : "nav-link"
-                        }
-                        to="/Login"
-                      >
-                        Log in
-                      </NavLink>
-                    </button>
-                    <button className="btn ms-3 rounded-5" type="submit">
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "nav-link active" : "nav-link"
-                        }
-                        to="/Register"
-                      >
-                        Sign Up
-                      </NavLink>
-                    </button>
+                    <div className="d-flex align-items-center gap-3">
+                      {!isLogin ? (
+                        <>
+                          <NavLink
+                            className={({ isActive }) =>
+                              `btn rounded-5 ${isActive ? "active" : ""}`
+                            }
+                            to="/login"
+                          >
+                            Log in
+                          </NavLink>
+                          <NavLink
+                            className={({ isActive }) =>
+                              `btn ms-3 rounded-5 ${isActive ? "active" : ""}`
+                            }
+                            to="/register"
+                          >
+                            Sign Up
+                          </NavLink>
+                        </>
+                      ) : (
+                        <>
+                          <ProfilePopup
+                            userName={userName}
+                            isLogin={isLogin}
+                            logOut={logOut}
+                          />
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
               </nav>
+
               <div className="header_content d-block w-100">
                 <div className="content">
                   <h1 className="my-5">

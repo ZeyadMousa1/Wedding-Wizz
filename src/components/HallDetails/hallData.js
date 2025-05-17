@@ -1,8 +1,23 @@
 import MeridienHeliopolisHotel from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-1.jpg";
+import MeridienHeliopolisHotel2 from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-2.jpg";
+import MeridienHeliopolisHotel3 from "./../../assets/Images/Halls/All Halls/Meridien-Heliopolis-Hotel-3.jpg";
 import GrandNileTower from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-1.jpg";
+import GrandNileTower2 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-2.jpg";
+import GrandNileTower3 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-3.jpg";
+import GrandNileTower4 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-4.jpg";
+import GrandNileTower5 from "./../../assets/Images/Halls/All Halls/Grand-Nile-Tower-5.jpg";
 import SkyExecutiveResort from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-1.jpg";
+import SkyExecutiveResort2 from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-2.jpg";
+import SkyExecutiveResort3 from "./../../assets/Images/Halls/All Halls/Sky-Executive-Resort-3.jpg";
 import TriumphHotelElTagamoa from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-1.jpg";
+import TriumphHotelElTagamoa2 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-2.jpg";
+import TriumphHotelElTagamoa3 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-3.jpg";
+import TriumphHotelElTagamoa4 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-4.jpg";
+import TriumphHotelElTagamoa5 from "./../../assets/Images/Halls/All Halls/Triumph-Hotel-El-Tagamoa-5.jpg";
 import GardeniaHall from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-1.jpg";
+import GardeniaHall2 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-2.jpg";
+import GardeniaHall3 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-3.jpg";
+import GardeniaHall4 from "./../../assets/Images/Halls/All Halls/Gardenia-Hall-4.jpg";
 import RoyalGarden from "./../../assets/Images/Halls/All Halls/Royal_Garden_1.jpg";
 import TheNileRitzCarlton from "./../../assets/Images/Halls/All Halls/The-Nile-Ritz-Carlton.jpg";
 import alfLeilaWaLeila from "./../../assets/Images/Halls/All Halls/Alf-Leila-Wa-Leila.jpg";
@@ -33,370 +48,421 @@ import moonstoneHall from "./../../assets/Images/Halls/All Halls/Moonstone Hall.
 export const halls = [
   {
     image: MeridienHeliopolisHotel,
+    image2: MeridienHeliopolisHotel2,
+    image3: MeridienHeliopolisHotel3,
     name: "Meridien Heliopolis Hotel",
     CLASSIFICATION: "Hotel",
     location: "Cairo",
     description:
-      "Step into a breathtaking hall adorned with sculptured columns and artistic ceiling details, blending classical architecture with modern flair. The spacious layout flows seamlessly from a grand entrance to a main hall that accommodates large gatherings, making it ideal for both ceremonies and receptions. Dream-like colors and textures create a memorable, sophisticated atmosphere for your special day",
+      "A grand hotel ballroom featuring sculptured columns and artistic ceiling details blending classical architecture with modern flair. Perfect for lavish ceremonies with capacity for large gatherings under dazzling crystal chandeliers.",
     link: "meridienHeliopolisHotel",
     capacity: "300 - 500",
     rate: 5,
+    price: 50000,
   },
   {
     image: GrandNileTower,
+    image2: GrandNileTower2,
+    image3: GrandNileTower3,
+    image4: GrandNileTower4,
+    image5: GrandNileTower5,
     name: "Grand Nile Tower",
     CLASSIFICATION: "Hotel",
     location: "Cairo",
     description:
-      "This wedding hall features floor-to-ceiling windows that flood the space with natural light, offering stunning views and a warm, inviting ambiance. The open layout allows for versatile seating and decor arrangements, while greenery and light-colored walls enhance the fresh, contemporary feel-perfect for couples seeking a bright and airy celebration.",
+      "Modern minimalist space with floor-to-ceiling windows offering panoramic Nile views. Features convertible LED lighting systems and a built-in projection screen for personalized wedding themes.",
     link: "grandNileTower",
     capacity: 500,
     rate: 3.5,
+    price: 30000,
   },
   {
     image: SkyExecutiveResort,
+    image2: SkyExecutiveResort2,
+    image3: SkyExecutiveResort3,
     name: "Sky Executive Resort",
     CLASSIFICATION: "Hotel",
     description:
-      "Designed for smaller gatherings, this venue boasts a cozy ceremony space with an eye-catching fireplace and oversized windows. The adjoining reception area features elegant tables, dramatic lighting, and tasteful decor, creating a classic yet intimate environment where every guest feels cherished.",
+      "Intimate rooftop venue with retractable glass dome overlooking the city skyline. Features a signature champagne fountain and fireplace lounge area for cozy post-ceremony gatherings.",
     location: "Cairo",
     link: "skyExecutiveResort",
     capacity: 400,
     rate: 4,
+    price: 35000,
   },
   {
     image: TriumphHotelElTagamoa,
+    image2: TriumphHotelElTagamoa2,
+    image3: TriumphHotelElTagamoa3,
+    image4: TriumphHotelElTagamoa4,
+    image5: TriumphHotelElTagamoa5,
     name: "Triumph Hotel El Tagamoa",
     CLASSIFICATION: "Hotel",
     description:
-      "With unique design elements like a “garden of columns” and textured stucco walls, this wedding hall is a haven for creativity and photographs. Distinct zones guide guests through a curated experience, from a photo gallery to a bouquet toss area, ensuring every moment is both beautiful and memorable.",
+      "Palatial ballroom with gilded mirrors and hand-painted fresco ceilings. Includes a bridal suite with private balcony and dedicated vintage car entrance for dramatic arrivals.",
     location: "Cairo",
     link: "triumphHotelElTagamoa",
     capacity: 500,
     rate: 5,
+    price: 80000,
   },
   {
     image: GardeniaHall,
+    image2: GardeniaHall2,
+    image3: GardeniaHall3,
+    image4: GardeniaHall4,
     name: "Gardenia Hall",
     CLASSIFICATION: "hall",
     description:
-      "Maximize your celebration with a hall designed for flexibility-convertible stages, movable partitions, and multi-purpose courtyards allow for smooth transitions between ceremony, dining, and dancing. Sustainable materials and thoughtful acoustics ensure comfort, style, and a personalized touch for every event.",
+      "Convertible garden pavilion with seasonal floral installations. Features a butterfly conservatory entrance and organic catering kitchen specializing in farm-to-table menus.",
     location: "Alexandria",
     link: "gardeniaHall",
     capacity: "100 - 200",
     rate: 4.5,
+    price: 49000,
   },
   {
     image: RoyalGarden,
     name: "Royal Garden",
     CLASSIFICATION: "hall",
     description:
-      "Maximize your celebration with a hall designed for flexibility-convertible stages, movable partitions, and multi-purpose courtyards allow for smooth transitions between ceremony, dining, and dancing. Sustainable materials and thoughtful acoustics ensure comfort, style, and a personalized touch for every event.",
+      "Industrial-chic warehouse space with exposed brick walls and custom neon installations. Includes a craft cocktail bar and dedicated photo booth area with vintage props.",
     location: "Alexandria",
     link: "royalGarden",
     capacity: "100 - 200",
     rate: 4.5,
+    price: 54000,
   },
   {
     image: TheNileRitzCarlton,
     name: "The Nile Ritz-Carlton",
     description:
-      "The largest ballroom in Downtown Cairo, Al Qahira Ballroom at The Nile Ritz-Carlton features 1,700 square meters of elegant space, grand foyers, and exquisite chandeliers. It is renowned for hosting the city’s most luxurious weddings and can be divided into five rooms for more intimate celebrations.",
+      "Luxurious art deco ballroom featuring original 1920s architectural details. Offers a vintage elevator entrance and jazz band stage for Gatsby-themed celebrations.",
     location: "Alexandria",
     link: "theNileRitzCarlton",
-    capacity: 250,
+    capacity: 400,
     rate: 4,
+    price: 35000,
   },
   {
     image: alfLeilaWaLeila,
     name: "Alf Leila Wa Leila",
     description:
-      "A historic and iconic venue, Alf Leila Wa Leila Ballroom has welcomed Egypt’s elite for decades. With 924 square meters of banquet space, it offers a blend of classic grandeur and modern amenities, perfect for glamorous wedding celebrations.",
+      "Historic palace venue with Ottoman-era architecture. Features courtyard gardens with ancient fountains and a dedicated henna ceremony chamber.",
     location: "Cairo",
     link: "alfLeilaWaLeila",
     rate: 4.5,
+    price: 48000,
+    capacity: 450,
   },
   {
     image: cleopatraHall,
     name: "Cleopatra Hall",
     description:
-      "Located on the Nile, the Cleopatra Ballroom at Semiramis InterContinental Cairo accommodates up to 1,170 guests. Its modern luxury, river views, and versatile layout make it a top choice for large, elegant weddings.",
+      "Modern pyramid-inspired venue with geometric glass architecture overlooking the Giza plateau. Features holographic projection mapping capabilities.",
     location: "Alexandria",
     link: "cleopatraHall",
     rate: 3,
+    price: 30000,
+    capacity: 350,
   },
   {
     image: tutankhamunHall,
-    name: "Tutankhamun Hall",
+    name: "Tut ankh amun Hall",
     description:
-      "The Tutankhamun Ballroom at JW Marriott Hotel Cairo offers one of the city’s most spacious and versatile wedding venues. Its contemporary style and attentive service ensure a seamless, memorable experience for both grand and intimate celebrations.",
+      "Pharaonic-themed venue with hieroglyphic wall carvings and replica ancient artifacts. Features a ceremonial barge entrance and papyrus scroll invitation designs.",
     location: "Alexandria",
     link: "tutankhamunHall",
     rate: 5,
+    price: 60000,
+    capacity: 500,
   },
   {
     image: marriottMenaHouse,
     name: "Marriott Mena House",
     description:
-      "Famed for its breathtaking views of the Pyramids of Giza, Marriott Mena House offers a magical setting for weddings. Its lush gardens and luxurious ballrooms provide a romantic and unforgettable backdrop for your special day.",
+      "Luxury desert oasis with private pyramid viewing terraces. Offers camel procession arrivals and sunset cocktail receptions in the shadow of ancient wonders.",
     location: "Giza",
     link: "marriottMenaHouse",
+    capacity: 250,
     rate: 2.5,
+    price: 25000,
   },
   {
     image: royalClub,
     name: "Royal Club",
     description:
-      "Located on the banks of the Nile in Giza, Royal Club Mohamed Aly is celebrated for its regal ambiance and lush green surroundings. The venue’s elegant halls and serene river views make it a sought-after choice for sophisticated wedding ceremonies.",
+      "Regal Nile-side estate with private marina access. Features gold-leaf trimmed ballrooms and a royal guard honor sword arch tradition for grand exits.",
     location: "Giza",
     link: "royalClub",
-    rate: 5,
+    rate: 4.5,
+    price: 58000,
+    capacity: 300,
   },
   {
     image: crystalLotusHall,
     name: "Crystal Lotus Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Tropical oasis venue featuring indoor lotus ponds and live bamboo forests. Includes floating ceremony platforms and monsoon rain simulation effects for dramatic exits.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "crystalLotusHall",
     capacity: "300 - 500",
     rate: 5,
+    price: 54000,
   },
   {
     image: emeraldPalace,
     name: "Emerald Palace",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Jewel-toned venue with emerald-green marble floors and gold leaf detailing. Offers a crystal staircase entrance and diamond-dust curtain pyrotechnics display.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "emeraldPalace",
     capacity: "300 - 500",
     rate: 5,
+    price: 60000,
   },
   {
     image: sunrisePavilion,
     name: "Sunrise Pavilion",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "East-facing glass structure designed for sunrise ceremonies. Features heated outdoor ceremony spaces and aurora borealis lighting simulations.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "sunrisePavilion",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 3.5,
+    price: 45000,
   },
   {
     image: opalBanquetHall,
     name: "Opal Banquet Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Iridescent venue with color-shifting wall panels and opalescent table settings. Includes a scent diffusion system that pairs aromas with menu courses.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "opalBanquetHall",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 4,
+    price: 45000,
   },
   {
     image: diamondViewBallroom,
     name: "Diamond View Ballroom",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Ultra-modern venue with prismatic glass architecture creating rainbow light effects. Features a telescope terrace for star-gazing receptions and meteor shower projections.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "diamondViewBallroom",
     capacity: "300 - 500",
     rate: 5,
+    price: 60000,
   },
   {
     image: jasmineCourt,
     name: "Jasmine Court",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Perfumed garden venue with blooming jasmine arches and floral ice sculptures. Features a blossom petal cannon send-off and signature floral cocktail menu.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "jasmineCourt",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 3,
+    price: 40000,
   },
   {
     image: pearlEleganceHall,
     name: "Pearl Elegance Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Nautical-themed venue with mother-of-pearl inlaid floors and mermaid-inspired decor. Features an underwater projection system and seashell-shaped champagne glasses.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "pearlEleganceHall",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 4.5,
+    price: 55000,
   },
   {
     image: goldenTerrace,
     name: "Golden Terrace",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Luxury venue featuring 24k gold-plated service ware and bullion curtain displays. Offers golden hour photography sessions with professional lighting setups.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "goldenTerrace",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 3.5,
+    price: 50000,
   },
   {
     image: sapphireGrandHall,
     name: "Sapphire Grand Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Azure-themed venue with wave-patterned dance floors and aquatic lighting effects. Features a champagne waterfall and synchronized swimming pool performances.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "sapphireGrandHall",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 4.5,
+    price: 56000,
   },
   {
     image: ivoryGardenVenue,
     name: "Ivory Garden Venue",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Pure white venue with sculpted marble gardens and dove release ceremonies. Features a crystal ice sculpture bar and snow machine winter wonderland effects.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "ivoryGardenVenue",
     capacity: "300 - 500",
     rate: 5,
+    price: 80000,
   },
   {
     image: rubyCrownBallroom,
     name: "Ruby Crown Ballroom",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Dramatic crimson-themed venue with velvet drapes and crystal chandeliers. Features a red carpet arrival experience and Hollywood-style step-and-repeat backdrop.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "rubyCrownBallroom",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 3,
+    price: 35000,
   },
   {
     image: harmonyEventHall,
     name: "Harmony Event Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Acoustically-engineered venue with surround sound gardens and musical water features. Offers live orchestra pits and customizable ceremony soundtrack design.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "harmonyEventHall",
     capacity: "300 - 500",
     rate: 5,
+    price: 58000,
   },
   {
     image: majesticHorizon,
     name: "Majestic Horizon",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Infinity-edge venue with panoramic desert views. Features sunset ceremony platforms and Bedouin-style luxury tent reception areas.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "majesticHorizon",
     capacity: "300 - 500",
     rate: 5,
+    price: 54000,
   },
   {
     image: blueNileVenue,
     name: "Blue Nile Venue",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Riverbank venue with floating reception platforms and LED-lit water pathways. Offers traditional felucca boat arrivals and Nubian cultural performances.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "blueNileVenue",
     capacity: "300 - 500",
     rate: 5,
+    price: 48000,
   },
   {
     image: starlightBanquetHall,
     name: "Starlight Banquet Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Astronomy-inspired venue with planetarium dome projections and meteor shower lighting effects. Features astronaut photo ops and zero-gravity dance floor simulations.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Mansoura",
     link: "starlightBanquetHall",
     capacity: "300 - 500",
     rate: 5,
+    price: 60000,
   },
   {
     image: palmOasisHall,
     name: "Palm Oasis Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Desert paradise venue with date palm groves and natural spring pools. Features traditional tannoura dance performances and Arabic coffee ceremonies.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "palmOasisHall",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 4,
+    price: 45000,
   },
   {
     image: celestialBallroom,
     name: "Celestial Ballroom",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Cloud-themed venue with floating platform ceremony spaces and angel wing photo walls. Features dry ice fog effects and heavenly choir performance packages.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "celestialBallroom",
     capacity: "300 - 500",
-    rate: 5,
+    rate: 3.5,
+    price: 38000,
   },
   {
     image: lavenderFieldsVenue,
     name: "Lavender Fields Venue",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Provence-inspired venue with endless lavender fields and essential oil aroma therapy stations. Features purple-hued lighting and herbal cocktail mixology bars.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Giza",
     link: "lavenderFieldsVenue",
     capacity: "300 - 500",
     rate: 5,
+    price: 80000,
   },
   {
     image: moonstoneHall,
     name: "Moonstone Hall",
     CLASSIFICATION: "Parks and clubs",
     description:
-      "Engagement, marriage contract, aqiqah, birthdays, private dinner, conferences, and more with integrated equipment that meets all your requirements. From DJ and photography to lighting and delicious buffets, enjoy a complete experience.",
+      "Celestial venue with glowing moon phase projections and astronaut-style seating. Features anti-gravity photo booths and space-themed cocktail presentations.",
     Address:
       "Royal - El Mokattam - El Hadaba El Wosta - Modern Academy Street - Next to Easy Sports Club",
     location: "Cairo",
     link: "moonstoneHall",
     capacity: "300 - 500",
     rate: 5,
+    price: 72000,
   },
 ];

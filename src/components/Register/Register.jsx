@@ -1,37 +1,36 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { userContext } from "../../context/userContext";
 
 function Register() {
   let navigate = useNavigate();
-  async function handleRegister(formsData) {
-    console.log("register", formsData);
-    //   let response = await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup',formsData);
-    //   console.log('Full Response' , response);
-    //   console.log('Certain Response' , response.data);
-    //   if(response.data.message === 'success'){
-    //     navigate('/login'); //programmatic routing >>>> useNavigate()
-    // }
 
-    // another way
-    axios
-      .post("https://ecommerce.routemisr.com/api/v1/auth/signup", formsData)
-      .then((response) => {
-        console.log("success", response);
-        if (response.data.message === "success") {
-          navigate("/login"); //programmatic routing
-        }
-      })
+  let { setLogin } = useContext(userContext);
 
-      .catch((error) => {
-        console.log("error", error);
-      });
+  async function handleRegister(values) {
+    console.log("Register", values);
+    try {
+      let response = await axios.post(
+        "https://ecommerce.routemisr.com/api/v1/auth/signup",
+        values
+      );
+      console.log("Full response", response);
+      console.log("Certain Response", response.data);
+      if (response.data.message === "success") {
+        localStorage.setItem("userToken", response.data.token);
+        setLogin(response.data.token);
+
+        navigate("/Login");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
   }
 
-  // validation
   let validationSchema = Yup.object({
     name: Yup.string()
       .required("name is required")
@@ -39,7 +38,7 @@ function Register() {
       .max(24, "max length is 24"),
     email: Yup.string()
       .required("email is required")
-      .email("enter valid email"), //check on email @ .
+      .email("enter valid email"),
     phone: Yup.string()
       .required("phone is required")
       .matches(/^01[1250][0-9]{8}$/, "phone is not valid"),
@@ -62,10 +61,17 @@ function Register() {
       rePassword: "",
       phone: "",
     },
-
     validationSchema: validationSchema,
     onSubmit: handleRegister,
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/");
+    }
+  });
+
   return (
     <>
       <section className="bg-light p-3 p-md-4 p-xl-5">

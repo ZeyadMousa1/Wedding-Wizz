@@ -1,13 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { halls } from "./../HallDetails/hallData";
 import { Link } from "react-router-dom";
 import "./Halls.css";
+import Search from "./Search";
 
 function AllTheHalls() {
   const [visibleCount, setVisibleCount] = useState(5);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [showModalImage, setShowModalImage] = useState(false);
+  const [filters, setFilters] = useState({
+    city: "",
+    price: "",
+  });
+  const [sortBy, setSortBy] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc"); //
+
+  // New states
+  const [searchName, setSearchName] = useState("");
+
+  useEffect(() => {
+    setVisibleCount(5);
+  }, [filters.city, filters.price, searchName, sortBy, sortOrder]);
+
+  // Filter halls by city, price, and name
+  let filteredHalls = halls.filter((hall) => {
+    if (filters.city && hall.location !== filters.city) return false;
+
+    if (filters.price) {
+      const priceStr = filters.price.trim();
+      const hallPrice = hall.price;
+
+      if (priceStr.startsWith("Less Than")) {
+        const max = parseInt(priceStr.replace(/\D/g, ""), 10);
+        if (hallPrice > max) return false;
+      } else if (priceStr.startsWith("More Than")) {
+        const min = parseInt(priceStr.replace(/\D/g, ""), 10);
+        if (hallPrice <= min) return false;
+      } else {
+        const max = parseInt(priceStr.replace(/\D/g, ""), 10);
+        if (hallPrice > max) return false;
+      }
+    }
+
+    // New: filter by name (case-insensitive)
+    if (
+      searchName &&
+      !hall.name.toLowerCase().includes(searchName.toLowerCase().trim())
+    )
+      return false;
+
+    return true;
+  });
+
+  // Sort halls based on sortBy
+  if (sortBy) {
+    filteredHalls = [...filteredHalls].sort((a, b) => {
+      let comparison = 0;
+      if (sortBy === "name") {
+        comparison = a.name.localeCompare(b.name);
+      } else if (sortBy === "rate") {
+        comparison = a.rate - b.rate;
+      } else if (sortBy === "price") {
+        comparison = a.price - b.price;
+      }
+
+      return sortOrder === "asc" ? comparison : -comparison;
+    });
+  }
+
+  // ... rest of your existing code remains unchanged
 
   const handleImageClick = (img) => {
     setModalImage(img);
@@ -24,7 +86,7 @@ function AllTheHalls() {
   };
 
   const handleViewAllClick = () => {
-    setVisibleCount(halls.length);
+    setVisibleCount(filteredHalls.length);
   };
 
   const renderStars = (rate = 0, max = 5) => {
@@ -41,15 +103,37 @@ function AllTheHalls() {
     return stars;
   };
 
+  const handleClearFilters = () => {
+    setFilters({ city: "", price: "" });
+    setSearchName("");
+    setSortBy("");
+    setSortOrder("asc");
+  };
+
   return (
     <>
       <section id="All_the_halls">
         <div className="All_the_halls">
           <div className="container-fluid">
+            <Search
+              selectedCity={filters.city}
+              selectedPrice={filters.price}
+              onCityChange={(city) => setFilters((prev) => ({ ...prev, city }))}
+              onPriceChange={(price) =>
+                setFilters((prev) => ({ ...prev, price }))
+              }
+              searchName={searchName}
+              onSearchNameChange={setSearchName}
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+              sortOrder={sortOrder}
+              onSortOrderChange={setSortOrder}
+              onClearFilters={handleClearFilters}
+            />
             <div className="Title mt-5 mb-3">
               <h2>All The Halls</h2>
             </div>
-            {halls.slice(0, visibleCount).map((item, index) => (
+            {filteredHalls.slice(0, visibleCount).map((item, index) => (
               <Link
                 to={`/Halls/${item.link}`}
                 className="text-decoration-none text-black"
@@ -88,6 +172,7 @@ function AllTheHalls() {
                                 <i className="fa-solid fa-location-dot"></i>{" "}
                                 {item.location}
                               </p>
+                              <p>Price : {item.price} EGP</p>
                               <div className="rate my-5 text-warning">
                                 {renderStars(item.rate)}
                               </div>
@@ -100,7 +185,7 @@ function AllTheHalls() {
                 </div>
               </Link>
             ))}
-            {visibleCount < halls.length && (
+            {visibleCount < filteredHalls.length && (
               <div className="d-flex justify-content-center my-5">
                 <button className="btn" onClick={handleViewAllClick}>
                   View all <i className="fa-solid fa-circle-right"></i>

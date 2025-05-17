@@ -1,8 +1,21 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/Images/Logo/rings.png";
+import { userContext } from "../../context/userContext";
+import { AuthContext } from "../../context/AuthContext";
+import ProfilePopup from "./ProfilePopup";
 
 function Navbar() {
+  let { isLogin, setLogin } = useContext(userContext);
+  const { userName } = useContext(AuthContext);
+  let navigate = useNavigate();
+
+  function logOut() {
+    localStorage.removeItem("userToken");
+    setLogin(null);
+    navigate("/login");
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-transparent">
@@ -11,6 +24,7 @@ function Navbar() {
             <img src={Logo} alt="" width="30" height="30" className="me-2" />
             Wedding Wizz
           </NavLink>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -65,26 +79,37 @@ function Navbar() {
                 </NavLink>
               </li>
             </ul>
-            <button className="btn rounded-5" type="submit">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
-                }
-                to="/Login"
-              >
-                Log in
-              </NavLink>
-            </button>
-            <button className="btn ms-3 rounded-5" type="submit">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
-                }
-                to="/Register"
-              >
-                Sign Up
-              </NavLink>
-            </button>
+
+            <div className="d-flex align-items-center gap-3">
+              {!isLogin ? (
+                <>
+                  <NavLink
+                    className={({ isActive }) =>
+                      `btn rounded-5 ${isActive ? "active" : ""}`
+                    }
+                    to="/login"
+                  >
+                    Log in
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      `btn ms-3 rounded-5 ${isActive ? "active" : ""}`
+                    }
+                    to="/register"
+                  >
+                    Sign Up
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <ProfilePopup
+                    userName={userName}
+                    isLogin={isLogin}
+                    logOut={logOut}
+                  />
+                </>
+              )}
+            </div>
           </div>
         </div>
       </nav>

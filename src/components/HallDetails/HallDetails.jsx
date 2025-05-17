@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import NewestSlider from "../HallsSlider/NewestSlider";
 import HallsSlider from "../HallsSlider/HallsSlider";
 import Footer from "../Footer/Footer";
 import { halls } from "./hallData";
+import "./HallDetails.css";
 
 function HallDetails() {
   const { hallId } = useParams();
   const hall = halls.find((h) => h.link === hallId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [hallId]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -46,13 +51,12 @@ function HallDetails() {
     return stars;
   };
 
+  const images = Object.keys(hall)
+    .filter((key) => key.startsWith("image"))
+    .map((key) => hall[key]);
+
   return (
     <div className="hall-details">
-      {/* <img src={hall.image} alt={hall.name} />
-      <h1>{hall.name}</h1>
-      <p>Location: {hall.location}</p>
-      <p>Capacity: {hall.capacity}</p>
-      <p>{hall.description}</p> */}
       <div className="container">
         <div className="row d-flex justify-content-between my-5">
           <div className="col-md-4 mt-5 p-0">
@@ -145,40 +149,46 @@ function HallDetails() {
             </div>
           </div>
           <div className="col-6 text-center">
-            <h2>{hall.name}</h2>
-            {/* <div id="carouselExampleIndicators" className="carousel slide my-5">
+            <div className="header mb-4">
+              <h1 className="display-5 fw-bold">{hall.name}</h1>
+              <div className="d-flex gap-3 align-items-center ms-4">
+                <span className="badge bg-primary fs-6">
+                  {hall.CLASSIFICATION}
+                </span>
+                <div className="rating">
+                  {renderStars(hall.rate)} ({hall.rate.toFixed(1)})
+                </div>
+              </div>
+            </div>
+            <div id="carouselExampleIndicators" className="carousel slide my-5">
               <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="0"
-                  className="active"
-                  ariaCurrent="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to={index}
+                    className={index === 0 ? "active" : ""}
+                    aria-current={index === 0 ? "true" : undefined}
+                    aria-label={`Slide ${index + 1}`}
+                  ></button>
+                ))}
               </div>
               <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img src={hall1} width={700} height={700} alt={hall.name} />
-                </div>
-                <div className="carousel-item">
-                  <img src={hall2} width={700} height={700} alt={hall.name} />
-                </div>
-                <div className="carousel-item">
-                  <img src={hall3} width={700} height={700} alt={hall.name} />
-                </div>
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`carousel-item ${index === 0 ? "active" : ""}`}
+                  >
+                    <img
+                      src={image}
+                      width={700}
+                      height={700}
+                      alt={hall.name}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                ))}
               </div>
               <button
                 className="carousel-control-prev"
@@ -204,28 +214,52 @@ function HallDetails() {
                 ></span>
                 <span className="visually-hidden">Next</span>
               </button>
-            </div> */}
-            <p>{hall.description}</p>
-            <div className="row">
-              <div className="rate my-5 col-6">
-                <span className="fw-bold">location :</span> {hall.location}
-              </div>
-              <div className="rate my-5 col-6">
-                <p>
-                  <span className="fw-bold">Classification :</span>{" "}
-                  {hall.CLASSIFICATION}
-                </p>
-              </div>
             </div>
-            <div className="row">
-              <div className="rate my-5 text-warning col-6">
-                <span className="fw-bold text-black">Rate : </span>
-                {renderStars(hall.rate)}
-              </div>
-              <div className="rate my-5 col-6">
-                <p>
-                  <span className="fw-bold">capacity :</span> {hall.capacity}
-                </p>
+
+            {/* Key Details */}
+            <div className="col-lg-12">
+              <div className="card border-0 shadow-sm h-100">
+                <div className="card-body">
+                  {/* Price Highlight */}
+                  <div className="d-flex justify-content-between align-items-center mb-4">
+                    <h3 className="text-primary mb-0">
+                      {hall.price.toLocaleString()} EGP
+                    </h3>
+                    <span className="badge bg-success fs-6">
+                      Capacity: {hall.capacity.toLocaleString()}
+                    </span>
+                  </div>
+
+                  {/* Key Features Grid */}
+                  <div className="row g-3 mb-4">
+                    <div className="col-6">
+                      <div className="d-flex align-items-center gap-2">
+                        <i className="fas fa-map-marker-alt text-muted"></i>
+                        <div>
+                          <small className="text-muted">Location</small>
+                          <div className="fw-medium">{hall.location}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="d-flex align-items-center gap-2">
+                        <i className="fas fa-users text-muted"></i>
+                        <div>
+                          <small className="text-muted">Classification</small>
+                          <div className="fw-medium">{hall.CLASSIFICATION}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="mb-4">
+                    <h5 className="mb-3">About This Venue</h5>
+                    <p className="text-muted line-clamp-3">
+                      {hall.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { userContext } from "../../context/userContext";
+import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   let navigate = useNavigate();
+  let { isLogin, setLogin } = useContext(userContext);
+  const { setUserName } = useContext(AuthContext);
+
   async function handleLogin(formsData) {
     console.log("login", formsData);
     axios
       .post("https://ecommerce.routemisr.com/api/v1/auth/signin", formsData)
+
       .then((response) => {
         console.log("success", response);
+        setUserName(response.data.user.name);
         if (response.data.message === "success") {
-          navigate("/"); //programmatic routing
+          localStorage.setItem("userToken", response.data.token);
+          setLogin(response.data.token);
+          console.log(isLogin);
+          navigate("/");
         }
       })
 
@@ -22,11 +32,10 @@ function Login() {
       });
   }
 
-  // validation
   let validationSchema = Yup.object({
     email: Yup.string()
       .required("email is required")
-      .email("enter valid email"), //check on email
+      .email("enter valid email"),
     password: Yup.string()
       .required("password is required")
       .matches(
@@ -40,10 +49,17 @@ function Login() {
       email: "",
       password: "",
     },
-
     validationSchema: validationSchema,
     onSubmit: handleLogin,
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/");
+    }
+  });
+
   return (
     <>
       <section className="bg-light p-3 p-md-4 p-xl-5">

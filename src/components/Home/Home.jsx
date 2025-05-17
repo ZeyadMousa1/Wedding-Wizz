@@ -38,7 +38,7 @@ function Home() {
                 <div className="container">
                   <div className="row">
                     <div className="col-md-3">
-                      <h3 className="d-flex justify-content-center">2500</h3>
+                      <h3 className="d-flex justify-content-center">150</h3>
                       <span className="d-flex justify-content-center">
                         Weddings
                       </span>
@@ -46,19 +46,19 @@ function Home() {
                     <div className="col-md-3">
                       <h3 className="d-flex justify-content-center">860+</h3>
                       <span className="d-flex justify-content-center">
-                        Weddings
+                        Ratings
                       </span>
                     </div>
                     <div className="col-md-3">
-                      <h3 className="d-flex justify-content-center">1800</h3>
+                      <h3 className="d-flex justify-content-center">32</h3>
                       <span className="d-flex justify-content-center">
-                        Weddings
+                        Halls
                       </span>
                     </div>
                     <div className="col-md-3">
                       <h3 className="d-flex justify-content-center">2K+</h3>
                       <span className="d-flex justify-content-center">
-                        Weddings
+                        Users
                       </span>
                     </div>
                   </div>
