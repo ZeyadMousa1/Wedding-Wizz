@@ -24,7 +24,7 @@ import alfLeilaWaLeila from "./../../assets/Images/Halls/All Halls/Alf-Leila-Wa-
 import cleopatraHall from "./../../assets/Images/Halls/All Halls/Cleopatra-Hall.jpg";
 import tutankhamunHall from "./../../assets/Images/Halls/All Halls/Tut-ankh-amun-Hall.jpg";
 import marriottMenaHouse from "./../../assets/Images/Halls/All Halls/Marriott-Mena-House.jpg";
-import royalClub from "./../../assets/Images/Halls/All Halls/Royal-Club.JPEG";
+import royalClub from "./../../assets/Images/Halls/All Halls/Royal-Club.jpeg";
 import crystalLotusHall from "./../../assets/Images/Halls/All Halls/Crystal-Lotus-Hall.JPG";
 import emeraldPalace from "./../../assets/Images/Halls/All Halls/Emerald-Palace.JPG";
 import sunrisePavilion from "./../../assets/Images/Halls/All Halls/Sunrise Pavilion.JPG";
