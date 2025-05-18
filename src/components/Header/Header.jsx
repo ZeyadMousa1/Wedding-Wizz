@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { userContext } from "../../context/userContext";
-import Logo from "./../../assets/Images/Logo/rings.png";
+import Logo from "./../../assets/Images/logo/rings.png";
 import image_1 from "./../../assets/Images/header_images/1.jpg";
 import image_2 from "./../../assets/Images/header_images/2.jpg";
 import image_3 from "./../../assets/Images/header_images/3.jpg";

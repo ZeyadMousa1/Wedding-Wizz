@@ -24,26 +24,26 @@ import alfLeilaWaLeila from "./../../assets/Images/Halls/All Halls/Alf-Leila-Wa-
 import cleopatraHall from "./../../assets/Images/Halls/All Halls/Cleopatra-Hall.jpg";
 import tutankhamunHall from "./../../assets/Images/Halls/All Halls/Tut-ankh-amun-Hall.jpg";
 import marriottMenaHouse from "./../../assets/Images/Halls/All Halls/Marriott-Mena-House.jpg";
-import royalClub from "./../../assets/Images/Halls/All Halls/Royal-Club.JPEG";
-import crystalLotusHall from "./../../assets/Images/Halls/All Halls/Crystal-Lotus-Hall.JPG";
-import emeraldPalace from "./../../assets/Images/Halls/All Halls/Emerald-Palace.JPG";
-import sunrisePavilion from "./../../assets/Images/Halls/All Halls/Sunrise Pavilion.JPG";
-import opalBanquetHall from "./../../assets/Images/Halls/All Halls/Opal Banquet Hall.JPG";
-import diamondViewBallroom from "./../../assets/Images/Halls/All Halls/Diamond-View-Ballroom.JPG";
+import royalClub from "./../../assets/Images/Halls/All Halls/Royal-Club.jpeg";
+import crystalLotusHall from "./../../assets/Images/Halls/All Halls/Crystal-Lotus-Hall.jpg";
+import emeraldPalace from "./../../assets/Images/Halls/All Halls/Emerald-Palace.jpg";
+import sunrisePavilion from "./../../assets/Images/Halls/All Halls/Sunrise Pavilion.jpg";
+import opalBanquetHall from "./../../assets/Images/Halls/All Halls/Opal Banquet Hall.jpg";
+import diamondViewBallroom from "./../../assets/Images/Halls/All Halls/Diamond-View-Ballroom.jpg";
 import jasmineCourt from "./../../assets/Images/Halls/All Halls/Jasmine Court.jpg";
 import pearlEleganceHall from "./../../assets/Images/Halls/All Halls/Pearl Elegance Hall.jpg";
-import goldenTerrace from "./../../assets/Images/Halls/All Halls/Golden Terrace.JPG";
-import sapphireGrandHall from "./../../assets/Images/Halls/All Halls/Sapphire Grand Hall.JPG";
-import ivoryGardenVenue from "./../../assets/Images/Halls/All Halls/Ivory Garden Venue.JPG";
-import rubyCrownBallroom from "./../../assets/Images/Halls/All Halls/Ruby Crown Ballroom.JPG";
-import harmonyEventHall from "./../../assets/Images/Halls/All Halls/Harmony Event Hall.JPG";
-import majesticHorizon from "./../../assets/Images/Halls/All Halls/Majestic Horizon.JPG";
-import blueNileVenue from "./../../assets/Images/Halls/All Halls/Blue Nile Venue.JPG";
-import starlightBanquetHall from "./../../assets/Images/Halls/All Halls/Starlight Banquet Hall.JPG";
-import palmOasisHall from "./../../assets/Images/Halls/All Halls/Palm Oasis Hall.JPG";
-import celestialBallroom from "./../../assets/Images/Halls/All Halls/Celestial Ballroom.JPG";
-import lavenderFieldsVenue from "./../../assets/Images/Halls/All Halls/Lavender Fields Venue.JPG";
-import moonstoneHall from "./../../assets/Images/Halls/All Halls/Moonstone Hall.JPG";
+import goldenTerrace from "./../../assets/Images/Halls/All Halls/Golden Terrace.jpg";
+import sapphireGrandHall from "./../../assets/Images/Halls/All Halls/Sapphire Grand Hall.jpg";
+import ivoryGardenVenue from "./../../assets/Images/Halls/All Halls/Ivory Garden Venue.jpg";
+import rubyCrownBallroom from "./../../assets/Images/Halls/All Halls/Ruby Crown Ballroom.jpg";
+import harmonyEventHall from "./../../assets/Images/Halls/All Halls/Harmony Event Hall.jpg";
+import majesticHorizon from "./../../assets/Images/Halls/All Halls/Majestic Horizon.jpg";
+import blueNileVenue from "./../../assets/Images/Halls/All Halls/Blue Nile Venue.jpg";
+import starlightBanquetHall from "./../../assets/Images/Halls/All Halls/Starlight Banquet Hall.jpg";
+import palmOasisHall from "./../../assets/Images/Halls/All Halls/Palm Oasis Hall.jpg";
+import celestialBallroom from "./../../assets/Images/Halls/All Halls/Celestial Ballroom.jpg";
+import lavenderFieldsVenue from "./../../assets/Images/Halls/All Halls/Lavender Fields Venue.jpg";
+import moonstoneHall from "./../../assets/Images/Halls/All Halls/Moonstone Hall.jpg";
 
 export const halls = [
   {

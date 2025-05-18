@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import Logo from "./../../assets/Images/Logo/rings.png";
+import Logo from "./../../assets/Images/logo/rings.png";
 import { userContext } from "../../context/userContext";
 import { AuthContext } from "../../context/AuthContext";
 import ProfilePopup from "./ProfilePopup";
