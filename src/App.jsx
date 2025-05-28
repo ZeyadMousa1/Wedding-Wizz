@@ -17,6 +17,11 @@ import Navbar from "./components/Navbar/Navbar";
 import HallDetails from "./components/HallDetails/HallDetails";
 import UserContextProvider from "./context/userContext";
 import { AuthProvider } from "./context/AuthContext";
+import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
+import ResetPassword from "./components/ForgetPassword/ResetPassword";
+import VerifyResetCode from "./components/ForgetPassword/VerifyResetCode";
+import FAQ from "./components/Profile/FAQ";
+import UserProfile from "./components/Profile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +31,12 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "Login", element: <Login /> },
       { path: "Register", element: <Register /> },
+      { path: "Forget-Password", element: <ForgetPassword /> },
+      { path: "reset-password", element: <ResetPassword /> },
+      { path: "verify-code", element: <VerifyResetCode /> },
       { path: "About", element: <About /> },
+      { path: "FAQ", element: <FAQ /> },
+      { path: "UserProfile", element: <UserProfile /> },
       { path: "Contact", element: <Contact /> },
       { path: "Halls", element: <Halls /> },
       { path: "Halls/:hallId", element: <HallDetails /> },

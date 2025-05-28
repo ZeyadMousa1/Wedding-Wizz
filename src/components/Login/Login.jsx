@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { userContext } from "../../context/userContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -134,6 +134,14 @@ function Login() {
                           ) : null}
                         </div>
                       </div>
+                      <div>
+                        <Link
+                          to={"../Forget-Password"}
+                          className="link-primary text-decoration-none"
+                        >
+                          forgot password
+                        </Link>
+                      </div>
                       <div className="col-12">
                         <div className="d-grid">
                           <button
@@ -149,12 +157,12 @@ function Login() {
                           <hr className="mt-5 mb-4 border-secondary-subtle" />
                           <p className="m-0 text-secondary text-center">
                             New Here?{" "}
-                            <a
-                              href="Register"
+                            <Link
+                              to={"../Register"}
                               className="link-primary text-decoration-none"
                             >
                               Register
-                            </a>
+                            </Link>
                           </p>
                         </div>
                       </div>

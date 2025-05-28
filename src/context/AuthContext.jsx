@@ -4,21 +4,20 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [userName, setUserName] = useState(localStorage.getItem("userName"));
-
-  // Optional: Add user info state if needed
-  // const [userInfo, setUserInfo] = useState(null);
+  const [email, setEmail] = useState(localStorage.getItem("email"));
 
   // Keep localStorage and state in sync
   useEffect(() => {
     if (userName) {
       localStorage.setItem("userName", userName);
+      localStorage.setItem("email", email);
     } else {
       localStorage.removeItem("userName");
     }
-  }, [userName]);
+  }, [userName, email]);
 
   return (
-    <AuthContext.Provider value={{ userName, setUserName }}>
+    <AuthContext.Provider value={{ userName, setUserName, email, setEmail }}>
       {children}
     </AuthContext.Provider>
   );

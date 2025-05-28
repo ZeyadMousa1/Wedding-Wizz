@@ -5,10 +5,14 @@ import HallsSlider from "../HallsSlider/HallsSlider";
 import Footer from "../Footer/Footer";
 import { halls } from "./hallData";
 import "./HallDetails.css";
+import emailjs from "@emailjs/browser";
 
 function HallDetails() {
   const { hallId } = useParams();
   const hall = halls.find((h) => h.link === hallId);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,6 +28,10 @@ function HallDetails() {
 
   if (!hall) return <div>Hall not found</div>;
 
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validatePhone = (phone) =>
+    /^\+?\d{8,15}$/.test(phone.replace(/\s/g, ""));
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -34,7 +42,51 @@ function HallDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    setErrorMsg("");
+    setSuccessMsg("");
+
+    // Client-side validation
+    if (!formData.name.trim()) {
+      setErrorMsg("Name is required.");
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
+    if (!validatePhone(formData.phone)) {
+      setErrorMsg("Please enter a valid phone number.");
+      return;
+    }
+    if (!formData.date) {
+      setErrorMsg("Please select a date.");
+      return;
+    }
+
+    setLoading(true);
+
+    const SERVICE_ID = "service_x42ftzc";
+    const TEMPLATE_ID = "template_7yevx7o";
+    const PUBLIC_KEY = "nwuGHTeo27AT49tkA";
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
+      (result) => {
+        setSuccessMsg("Booking sent! We will contact you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          date: "",
+          comments: "",
+        });
+        setLoading(false);
+        console.log(formData);
+      },
+      (error) => {
+        setErrorMsg("Failed to send booking. Please try again.");
+        setLoading(false);
+      }
+    );
   };
 
   const renderStars = (rate = 0, max = 5) => {
@@ -70,7 +122,7 @@ function HallDetails() {
                 </h3>
               </div>
               <div className="form">
-                <form action="" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} autoComplete="off" noValidate>
                   <div className="my-5 px-5">
                     <div className="form-floating my-3">
                       <input
@@ -81,8 +133,8 @@ function HallDetails() {
                         onChange={handleChange}
                         value={formData.name}
                         placeholder="name"
-                        autoComplete="off"
                         required
+                        aria-label="Name"
                       />
                       <label htmlFor="floatingInput">Name</label>
                     </div>
@@ -96,6 +148,7 @@ function HallDetails() {
                         id="floatingEmail"
                         placeholder="email"
                         required
+                        aria-label="Email"
                       />
                       <label htmlFor="floatingEmail">Email</label>
                     </div>
@@ -109,8 +162,9 @@ function HallDetails() {
                         onChange={handleChange}
                         placeholder="phone"
                         required
+                        aria-label="Phone"
                       />
-                      <label htmlFor="floatingNumber">phone</label>
+                      <label htmlFor="floatingNumber">Phone</label>
                     </div>
                     <div className="form-floating my-3">
                       <input
@@ -122,6 +176,7 @@ function HallDetails() {
                         onChange={handleChange}
                         placeholder="Date"
                         required
+                        aria-label="Date"
                       />
                       <label htmlFor="floatingSubject">Date</label>
                     </div>
@@ -134,14 +189,35 @@ function HallDetails() {
                         onChange={handleChange}
                         id="floatingTextarea2"
                         style={{ height: "100px" }}
+                        aria-label="Comments"
                       ></textarea>
                       <label htmlFor="floatingTextarea2">Comments</label>
                     </div>
+                    {errorMsg && (
+                      <div className="alert alert-danger py-2">{errorMsg}</div>
+                    )}
+                    {successMsg && (
+                      <div className="alert alert-success py-2">
+                        {successMsg}
+                      </div>
+                    )}
                     <button
                       type="submit"
                       className="btn btn-primary btn-lg my-5 w-100"
+                      disabled={loading}
                     >
-                      Book Now
+                      {loading ? (
+                        <span>
+                          <span
+                            className="spinner-border spinner-border-sm me-2"
+                            role="status"
+                            aria-hidden="true"
+                          ></span>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Book Now"
+                      )}
                     </button>
                   </div>
                 </form>
