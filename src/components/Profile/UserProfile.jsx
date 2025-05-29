@@ -187,7 +187,7 @@ function UserProfile() {
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn btn-info">
+                <button type="submit" className="btn btn-primary">
                   Save Changes
                 </button>
               </div>

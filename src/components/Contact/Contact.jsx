@@ -6,32 +6,32 @@ function Contact() {
   return (
     <>
       <section id="Contact_us">
-        <div class="contactus">
-          <div class="container">
-            <div class="row my-3">
-              <div class="col-md-6">
+        <div className="contactus">
+          <div className="container">
+            <div className="row my-3">
+              <div className="col-md-6">
                 <div>
-                  <h2 class="my-5">
+                  <h2 className="my-5">
                     Handling the stress so your event is a success{" "}
                   </h2>
                   <p>
                     Sed lectus ultricies id id massa tellus. Gravida ullamcorper
                     lectus vitae tristique cursus tempor rutrum
                   </p>
-                  <div class="contact row m-3">
-                    <div class="col-md-6 my-5">
-                      <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-phone"></i>
-                        <div class="mx-4">
+                  <div className="contact row m-3">
+                    <div className="col-md-6 my-5">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-solid fa-phone"></i>
+                        <div className="mx-4">
                           <p>phone</p>
                           <p>(+20)1234567891</p>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6 my-5">
-                      <div class="d-flex align-items-center">
-                        <i class="fa-regular fa-envelope"></i>
-                        <div class="mx-4">
+                    <div className="col-md-6 my-5">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-envelope"></i>
+                        <div className="mx-4">
                           <p>Email</p>
                           <p>WeddingWizz@gmail.com</p>
                         </div>
@@ -48,14 +48,14 @@ function Contact() {
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 bg-light mt-5 p-5">
+              <div className="col-md-6 bg-light mt-5 p-5">
                 <div>
                   <h3>Send Us a message</h3>
                   <p>
                     Sed lectus ultricies id id massa tellus. Gravida ullamcorper
                     lectus vitae tristique cursus tempor rutrum
                   </p>
-                  <div class="form">
+                  <div className="form">
                     <form action="">
                       <div className="form-floating my-3">
                         <input

@@ -47,7 +47,7 @@ function VerifyResetCode() {
           // pattern="\d{6}"
           className="form-control my-3"
         />
-        <label htmlFor="text" classNameName="form-label">
+        <label htmlFor="text" className="form-label">
           Enter your verification code:
         </label>
         <button

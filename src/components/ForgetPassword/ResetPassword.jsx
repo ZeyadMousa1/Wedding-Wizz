@@ -94,7 +94,7 @@ function ResetPassword() {
             id="password"
             minLength="6"
           />
-          <label htmlFor="Password" classNameName="form-label">
+          <label htmlFor="Password" className="form-label">
             Enter your New Password:
           </label>
         </div>
@@ -113,7 +113,7 @@ function ResetPassword() {
                 : ""
             }`}
           />
-          <label htmlFor="rePassword" classNameName="form-label">
+          <label htmlFor="rePassword" className="form-label">
             reEnter your New Password:
           </label>
         </div>

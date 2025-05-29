@@ -11,7 +11,7 @@ function NotFound() {
               <div className="text-center">
                 <h2 className="d-flex justify-content-center align-items-center gap-2 mb-4">
                   <span className="display-1 fw-bold">4</span>
-                  <i class="fa-solid fa-circle-exclamation text-danger fs-1"></i>
+                  <i className="fa-solid fa-circle-exclamation text-danger fs-1"></i>
                   <span className="display-1 fw-bold bsb-flip-h">4</span>
                 </h2>
                 <h3 className="h2 mb-2">Oops! You're lost.</h3>
