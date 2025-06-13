@@ -4,6 +4,7 @@ import Logo from "./../../assets/Images/logo/rings.png";
 import { userContext } from "../../context/userContext";
 import { AuthContext } from "../../context/AuthContext";
 import ProfilePopup from "./ProfilePopup";
+import "./navbar.css";
 
 function Navbar() {
   let { isLogin, setLogin } = useContext(userContext);
@@ -18,7 +19,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-transparent">
+      <nav className="navbar navbar-expand-lg">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
             <img src={Logo} alt="" width="30" height="30" className="me-2" />

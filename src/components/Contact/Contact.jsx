@@ -1,6 +1,7 @@
 import React from "react";
 import contactUs from "./../../assets/Images/contactus/_R5A5846.jpg";
 import Footer from "../Footer/Footer";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 function Contact() {
   return (
@@ -19,7 +20,7 @@ function Contact() {
                     lectus vitae tristique cursus tempor rutrum
                   </p>
                   <div className="contact row m-3">
-                    <div className="col-md-6 my-5">
+                    <div className="col-md-6 my-5 ">
                       <div className="d-flex align-items-center">
                         <i className="fa-solid fa-phone"></i>
                         <div className="mx-4">
@@ -123,7 +124,7 @@ function Contact() {
           </div>
         </div>
       </section>
-
+      <ScrollToTopButton />
       <Footer />
     </>
   );

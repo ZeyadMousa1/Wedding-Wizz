@@ -16,6 +16,12 @@ export function AuthProvider({ children }) {
     }
   }, [userName, email]);
 
+  useEffect(() => {
+  const storedName = localStorage.getItem("userName");
+  if (storedName) setUserName(storedName);
+}, []);
+
+
   return (
     <AuthContext.Provider value={{ userName, setUserName, email, setEmail }}>
       {children}

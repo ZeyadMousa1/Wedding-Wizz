@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 
 function FAQ() {
   return (
@@ -517,6 +518,7 @@ function FAQ() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

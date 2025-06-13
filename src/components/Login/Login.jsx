@@ -8,28 +8,35 @@ import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   let navigate = useNavigate();
-  let { isLogin, setLogin } = useContext(userContext);
+  let { setLogin } = useContext(userContext);
   const { setUserName } = useContext(AuthContext);
 
   async function handleLogin(formsData) {
-    console.log("login", formsData);
-    axios
-      .post("https://ecommerce.routemisr.com/api/v1/auth/signin", formsData)
+    try {
+      const response = await axios.post(
+        "https://ecommerce.routemisr.com/api/v1/auth/signin",
+        formsData
+      );
 
-      .then((response) => {
-        console.log("success", response);
-        setUserName(response.data.user.name);
-        if (response.data.message === "success") {
-          localStorage.setItem("userToken", response.data.token);
-          setLogin(response.data.token);
-          console.log(isLogin);
-          navigate("/");
-        }
-      })
+      console.log("success", response);
 
-      .catch((error) => {
-        console.log("error", error);
-      });
+      if (response.data.message === "success") {
+        const token = response.data.token;
+        const userName = response.data.user.name;
+
+        // ✅ Save token and userName in localStorage
+        localStorage.setItem("userToken", token);
+        localStorage.setItem("userName", userName);
+
+        // ✅ Update context states
+        setLogin(true);
+        setUserName(userName);
+
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
   }
 
   let validationSchema = Yup.object({
@@ -54,11 +61,11 @@ function Login() {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("userToken");
     if (token) {
       navigate("/");
     }
-  });
+  }, []);
 
   return (
     <>

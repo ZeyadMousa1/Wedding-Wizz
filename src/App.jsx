@@ -15,7 +15,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import HallDetails from "./components/HallDetails/HallDetails";
-import UserContextProvider from "./context/userContext";
+import { UserContextProvider } from "./context/userContext";
 import { AuthProvider } from "./context/AuthContext";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import ResetPassword from "./components/ForgetPassword/ResetPassword";

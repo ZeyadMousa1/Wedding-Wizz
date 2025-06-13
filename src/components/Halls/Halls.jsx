@@ -3,6 +3,7 @@ import AllTheHalls from "./allTheHalls";
 import Footer from "../Footer/Footer";
 import HallsSlider from "../HallsSlider/HallsSlider";
 import NewestSlider from "../HallsSlider/NewestSlider";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 function Halls() {
   return (
@@ -10,6 +11,7 @@ function Halls() {
       <HallsSlider />
       <NewestSlider />
       <AllTheHalls />
+      <ScrollToTopButton />
       <Footer />
     </>
   );

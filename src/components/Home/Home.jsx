@@ -17,6 +17,7 @@ import event5 from "./../../assets/Images/Halls/events/event_5.jpg";
 import event6 from "./../../assets/Images/Halls/events/event_6.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 function Home() {
   return (
@@ -324,7 +325,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+      <ScrollToTopButton />
       <Footer />
     </>
   );
