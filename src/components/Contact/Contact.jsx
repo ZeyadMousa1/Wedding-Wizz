@@ -16,24 +16,24 @@ function Contact() {
                     Handling the stress so your event is a success{" "}
                   </h2>
                   <p>
-                    Sed lectus ultricies id id massa tellus. Gravida ullamcorper
-                    lectus vitae tristique cursus tempor rutrum
+                    Planning an event can be overwhelming—but we’re here to
+                    help. Our team is ready to support you every step of the
+                    way, making sure everything runs perfectly from start to
+                    finish.
                   </p>
                   <div className="contact row m-3">
                     <div className="col-md-6 my-5 ">
                       <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-phone"></i>
                         <div className="mx-4">
-                          <p>phone</p>
+                          <p>📞 phone</p>
                           <p>(+20)1234567891</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6 my-5">
                       <div className="d-flex align-items-center">
-                        <i className="fa-regular fa-envelope"></i>
                         <div className="mx-4">
-                          <p>Email</p>
+                          <p>📧 Email</p>
                           <p>WeddingWizz@gmail.com</p>
                         </div>
                       </div>
@@ -53,8 +53,9 @@ function Contact() {
                 <div>
                   <h3>Send Us a message</h3>
                   <p>
-                    Sed lectus ultricies id id massa tellus. Gravida ullamcorper
-                    lectus vitae tristique cursus tempor rutrum
+                    Have a question or ready to start planning your big day?
+                    Fill out the form below and our team will get back to you as
+                    soon as possible.
                   </p>
                   <div className="form">
                     <form action="">

@@ -93,18 +93,13 @@ function Home() {
             <div className="row">
               <div className="col-md-6">
                 <h2 className="my-3">We keep in mind the quality of service</h2>
-                <div>
+                <div className="my-5">
                   <p>
-                    Sed lectus ultricies id id massa tellus. Gravida ullamcorper
-                    lectus vitae tristique cursus tempor rutrum. Aenean posuere
-                    urna feugiat nunc in nulla. Non ac iaculis lobortis amet
-                    lectus ac donec
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    Aenean posuere urna feugiat nunc in nulla. Non ac iaculis
-                    lobortis amet lectus ac donec
+                    At our venue, every detail matters. We believe your special
+                    day deserves more than just a space, it deserves elegance,
+                    care, and unforgettable memories. From the moment you book
+                    until the last guest leaves, we’re committed to delivering
+                    exceptional service.
                   </p>
                 </div>
                 <div className="row">
