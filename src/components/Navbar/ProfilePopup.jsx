@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import ReactDOM from "react-dom";
 import "./ProfileDropdown.css";
 
 function ProfileDropdown() {
@@ -50,7 +51,7 @@ function ProfileDropdown() {
             top: 48,
             right: 0,
             background: "rgba(0, 0, 0, 0.45)",
-            zIndex: 100,
+            zIndex: 9999,
           }}
         >
           <ul className="list-unstyled mb-0">

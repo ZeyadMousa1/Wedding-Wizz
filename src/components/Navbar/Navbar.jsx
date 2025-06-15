@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../../assets/Images/logo/rings.png";
 import { userContext } from "../../context/userContext";
@@ -10,6 +10,16 @@ function Navbar() {
   let { isLogin, setLogin } = useContext(userContext);
   const { userName } = useContext(AuthContext);
   let navigate = useNavigate();
+
+  // ✅ Check token when component mounts
+  useEffect(() => {
+    const token = localStorage.getItem("userToken");
+    if (token) {
+      setLogin(true); // or setLogin(token) if you store actual token
+    } else {
+      setLogin(null);
+    }
+  }, []);
 
   function logOut() {
     localStorage.removeItem("userToken");
