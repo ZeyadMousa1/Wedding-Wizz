@@ -149,6 +149,7 @@ function AllTheHalls() {
                               <div className="slider-image-container">
                                 <img
                                   src={item.image}
+                                  loading="lazy"
                                   alt={`Top Rated Hall ${index + 1}`}
                                   className="slider-image"
                                   onClick={(e) => {
